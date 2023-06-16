@@ -2,18 +2,17 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import s from './MainIconNavigator.module.sass';
+import s from './MainNav.module.sass';
 
 type Nav = {
     label: string,
-    icon: React.ReactNode,
     href: string
 }
 type Props = {
     navLinks: Nav[]
 }
 
-export default function MainIconNavigator({ navLinks }: Props) {
+export function NavLink({ navLinks }: Props) {
     const path = usePathname();
 
     return (
@@ -28,8 +27,8 @@ export default function MainIconNavigator({ navLinks }: Props) {
                             href={link.href}
                             className={`${s.link} ${isActive ? s.active : ''}`}
                         >
-                            <div className={s.container}>
-                                {link.icon}
+                            <div className={s.wrap}>
+                                {link.label}
                             </div>
                         </Link>
                     )
