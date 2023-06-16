@@ -13,7 +13,7 @@ type Props = {
     navLinks: Nav[]
 }
 
-export function IconNavigator({ navLinks }: Props) {
+export function IconNavLink({ navLinks }: Props) {
     const path = usePathname();
 
     return (

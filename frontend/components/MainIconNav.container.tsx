@@ -2,7 +2,7 @@
 
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import { IconNavigator } from './MainIconNav';
+import { IconNavLink } from './MainIconNav';
 import s from './MainIconNav.module.sass';
 
 const navItems2 = [
@@ -13,7 +13,7 @@ const navItems2 = [
 export function MainIconNavContainer() {
     return (
         <div className={s.container}>
-            <IconNavigator navLinks={navItems2} />
+            <IconNavLink navLinks={navItems2} />
         </div>
     )
 }
