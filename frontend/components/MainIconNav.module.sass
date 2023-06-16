@@ -12,7 +12,7 @@
     justify-content: center
     align-items: center
     border-radius: 50%
-    border: 1px solid #ccc
+    border: 1px solid var(--brd-color)
 
 .link
     display: flex
@@ -25,9 +25,9 @@
     &:hover
         color: black
     &:hover .wrap
-        border: 1px solid gray
+        border: 1px solid var(--brd-color-hover)
 
 .active
     color: #555
     & .wrap
-        background: #55555511
+        background: var(--bg-hover)
