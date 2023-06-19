@@ -1,4 +1,4 @@
-import { NavLink } from './MainNav';
+import { NavLink } from './MainNav.link';
 import s from './MainNav.module.sass';
 
 const navItems1 = [

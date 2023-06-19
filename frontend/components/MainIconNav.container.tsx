@@ -2,7 +2,7 @@
 
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import { IconNavLink } from './MainIconNav';
+import { IconNavLink } from './MainIconNav.link';
 import s from './MainIconNav.module.sass';
 
 const navItems2 = [

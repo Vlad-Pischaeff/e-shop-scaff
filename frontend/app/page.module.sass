@@ -3,25 +3,30 @@
     margin: 8px
     gap: 8px
 .leftmenu
-    flex: 1 1 20%
-    min-width: 8rem
-    border: 1px solid var(--brd-color-hover)
-    padding-left: 8px
-    background: var(--bg-hover)
+    // flex: 1 1 20%
+    min-width: 6rem
+    // border: 1px solid var(--brd-color-hover)
+    // padding-left: 8px
+    background: dodgerblue
+    border-radius: 8px
+    overflow: hidden
 .leftmenu ul li
     list-style-type: none
     font-size: 1.2rem
     line-height: 2.5rem
+    padding: 0 8px
     &:hover
-        font-weight: bold
-        background: var(--bg-hover)
-        border-right: 4px solid var(--brd-color-hover)
-        margin-right: -4px
+        // font-weight: bold
+        color: white
+        background: var(--menu-hover)
+        // border-right: 4px solid red
+        // margin-right: -4px
         cursor: pointer
 .center
     flex: 1 1 80%
     max-height: 25rem
-    background: var(--bg-hover)
+    background: tomato
+    border-radius: 8px
     & img
         object-fit: cover
         width: 100%
