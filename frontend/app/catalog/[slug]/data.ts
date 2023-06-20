@@ -95,7 +95,7 @@ export const navItems = {
             { label: 'Утилиты' },
         ],
         'image': 'image.png',
-        'menubgcolor': 'beige',
+        'menubgcolor': 'bisque',
         'bgcolor': 'violet',
     },
 };

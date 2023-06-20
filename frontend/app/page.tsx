@@ -13,7 +13,7 @@ const navItems = [
 
 export default function Home() {
     return (
-        <main>
+        <main className={s.main}>
             {/* <h2>Main page</h2> */}
             <div className={s.layout}>
                 <aside className={s.leftmenu}>
@@ -32,7 +32,7 @@ export default function Home() {
                     </ul>
                 </aside>
                 <div className={s.center}>
-                    <img src='/frontpage2.png' alt='frontpage' />
+                    <img src='/images/frontpage2.png' alt='frontpage' />
                 </div>
             </div>
         </main>
