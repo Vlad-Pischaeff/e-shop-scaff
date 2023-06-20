@@ -19,7 +19,7 @@ export default function CatalogSlug(
                     className={s.center}
                     style={{ 'background': bgcolor }}
                 >
-                    <img src={`/images/${slug}.png`} alt='frontpage' />
+                    <img src={`/images/${slug}.jpg`} alt='frontpage' />
                 </div>
 
             </div>

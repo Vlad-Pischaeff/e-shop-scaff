@@ -14,7 +14,6 @@ const navItems = [
 export default function Home() {
     return (
         <main className={s.main}>
-            {/* <h2>Main page</h2> */}
             <div className={s.layout}>
                 <aside className={s.leftmenu}>
                     <ul>

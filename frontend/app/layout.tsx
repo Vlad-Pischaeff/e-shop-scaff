@@ -1,6 +1,7 @@
 import '@/styles/globals.sass';
 import { MainFooter } from '@/components/MainFooter';
 import { MainHeader } from '@/components/MainHeader';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { MainLogo } from '@/components/MainLogo';
 
 export const metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout(
             <body>
                 <MainLogo />
                 <MainHeader />
+                <Breadcrumbs />
                 {children}
                 <MainFooter />
             </body>
