@@ -21,9 +21,9 @@ export const navItems = {
             { label: 'Ноутбуки MSI' },
             { label: 'Ноутбуки Apple' },
         ],
-        'image': 'image.png',
+        'image': 'notebooks.png',
         'menubgcolor': 'coral',
-        'bgcolor': 'brown',
+        'bgcolor': 'aquamarine',
     },
     'Monitors': {
         'submenu': [
