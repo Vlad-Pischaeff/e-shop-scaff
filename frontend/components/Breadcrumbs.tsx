@@ -1,17 +1,18 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useParams } from 'next/navigation';
 // import { Slug } from './data';
 import s from './Breadcrumbs.module.sass';
 
 export function Breadcrumbs() {
     const pathname = usePathname();
-    const link = 'Computers';
+    const params = useParams();
+    // const link = 'Computers';
     let linkPath = `/catalog`;
     const path = pathname.split('/').slice(2);
 
-    console.log('path...', pathname, path);
+    console.log('path...', pathname, path, params);
 
     return (
         <div className={s.main}>
@@ -26,7 +27,7 @@ export function Breadcrumbs() {
                     return (
                         <div className={s.image} key={link}>
                             <span className={s.gt}>&gt;</span>
-                            <Link href={linkPath} className={s.link}>{link}</Link>
+                            <Link href={linkPath} className={s.link}>{decodeURI(link)}</Link>
                         </div>
                     )
                 })

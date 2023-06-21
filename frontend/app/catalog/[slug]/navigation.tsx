@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Slug, navItems } from './data';
+import { Slug, navItems } from '@/data/data';
 import s from './page.module.sass';
 
 export function Navigation(
