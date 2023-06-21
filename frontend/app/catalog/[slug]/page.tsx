@@ -1,8 +1,20 @@
+import { Metadata } from "next";
 import { Navigation } from './navigation';
 import { Slug } from '@/data/data';
 import s from './page.module.sass';
 
-export default function Catalog(
+export async function generateMetadata(
+    { params }:
+    { params: { slug: Slug }}
+): Promise<Metadata> {
+    const { slug } = params;
+
+    return {
+        title: `shop | ${slug}`
+    }
+}
+
+export default async function Catalog(
     { params }:
     { params: { slug: Slug }}
 ) {

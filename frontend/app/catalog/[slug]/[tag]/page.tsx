@@ -1,7 +1,19 @@
+import { Metadata } from "next";
 import { Slug } from '@/data/data';
 import s from './page.module.sass';
 
-export default function SubCatalog(
+export async function generateMetadata(
+    { params }:
+    { params: { tag: string, slug: Slug }}
+): Promise<Metadata> {
+    const { slug, tag } = params;
+
+    return {
+        title: `shop | ${slug} | ${decodeURI(tag)}`
+    }
+}
+
+export default async function SubCatalog(
     { params }:
     { params: { tag: string, slug: Slug }}
 ) {
@@ -17,10 +29,7 @@ export default function SubCatalog(
                 <div className={s.leftmenu}>
                     filter
                 </div>
-                <div
-                    className={s.center}
-
-                >
+                <div className={s.center}>
                     sub component
                 </div>
 
