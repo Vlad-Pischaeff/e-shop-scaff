@@ -31,7 +31,7 @@ export default function Home() {
                     </ul>
                 </aside>
                 <div className={s.center}>
-                    <img src='/images/frontpage.webp' alt='frontpage' />
+                    <img src='/images/frontpage.jpg' alt='frontpage' />
                 </div>
             </div>
         </main>
