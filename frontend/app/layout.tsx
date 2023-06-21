@@ -1,8 +1,8 @@
 import '@/styles/globals.sass';
 import { MainFooter } from '@/components/MainFooter';
 import { MainHeader } from '@/components/MainHeader';
-import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { MainLogo } from '@/components/MainLogo';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export const metadata = {
     title: 'Next App Shop',
