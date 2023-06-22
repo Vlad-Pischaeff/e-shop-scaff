@@ -4,7 +4,7 @@ import s from './page.module.sass';
 
 export async function generateMetadata(
     { params }:
-    { params: { tag: string, slug: Slug }}
+    { params: { tag: string, slug: string }}
 ): Promise<Metadata> {
     const { slug, tag } = params;
 
@@ -15,7 +15,7 @@ export async function generateMetadata(
 
 export default async function SubCatalog(
     { params }:
-    { params: { tag: string, slug: Slug }}
+    { params: { tag: string, slug: string }}
 ) {
     // const { slug } = params;
     // const { bgcolor } = navItems[slug];
@@ -24,16 +24,16 @@ export default async function SubCatalog(
     return (
         <main className={s.main}>
 
-            <div className={s.layout}>
+            <article className={s.layout}>
 
-                <div className={s.leftmenu}>
+                <aside className={s.leftmenu}>
                     filter
-                </div>
-                <div className={s.center}>
+                </aside>
+                <section className={s.center}>
                     sub component
-                </div>
+                </section>
 
-            </div>
+            </article>
         </main>
     )
 }

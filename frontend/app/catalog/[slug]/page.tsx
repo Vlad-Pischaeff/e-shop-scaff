@@ -1,11 +1,18 @@
+import Image from 'next/image';
 import { Metadata } from "next";
 import { Navigation } from './navigation';
-import { Slug } from '@/data/data';
 import s from './page.module.sass';
+
+async function getSubSection(slug: string) {
+    const response = await fetch(`http://localhost:3001/sections?title=${slug}`,
+        { cache: 'no-store' }
+    );
+    return response.json();
+}
 
 export async function generateMetadata(
     { params }:
-    { params: { slug: Slug }}
+    { params: { slug: string }}
 ): Promise<Metadata> {
     const { slug } = params;
 
@@ -16,10 +23,12 @@ export async function generateMetadata(
 
 export default async function Catalog(
     { params }:
-    { params: { slug: Slug }}
+    { params: { slug: string }}
 ) {
     const { slug } = params;
-    // const { bgcolor } = navItems[slug];
+    const nav = await getSubSection(slug);
+    const { bgcolor } = nav[0];
+
     console.log('page > Catalog > slug...', slug, params)
 
     return (
@@ -27,12 +36,12 @@ export default async function Catalog(
 
             <div className={s.layout}>
 
-                <Navigation slug={slug} />
+                <Navigation slug={slug} nav={nav} />
                 <div
                     className={s.center}
-                    // style={{ 'background': bgcolor }}
+                    style={{ 'background': bgcolor }}
                 >
-                    <img src={`/images/${slug}.jpg`} alt='frontpage' />
+                    <Image src={`/images/${slug}.jpg`} width={800} height={600} alt='frontpage' />
                 </div>
 
             </div>

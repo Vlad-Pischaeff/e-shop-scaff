@@ -1,13 +1,12 @@
 import Link from 'next/link';
-import { Slug, navItems } from '@/data/data';
 import s from './page.module.sass';
 
 export function Navigation(
-    { slug }:
-    { slug: Slug }
+    { slug, nav }:
+    { slug: string, nav: any[] }
 ) {
 
-    const { menubgcolor } = navItems[slug];
+    const { menubgcolor } = nav[0];
 
     return (
         <aside
@@ -16,9 +15,9 @@ export function Navigation(
         >
             <ul>
                 {
-                    navItems[slug].submenu.map(item => {
+                    nav[0].submenu.map((item: any) => {
                         return (
-                            <div key={item.label}>
+                            <div key={item.id}>
                                 <Link href={`/catalog/${slug}/${item.label}`}>
                                     <li>{item.label}</li>
                                 </Link>

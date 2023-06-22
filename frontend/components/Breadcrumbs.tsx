@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { usePathname, useParams } from 'next/navigation';
-// import { Slug } from './data';
 import s from './Breadcrumbs.module.sass';
 
 export function Breadcrumbs() {
@@ -13,7 +12,7 @@ export function Breadcrumbs() {
     const path = pathname.split('/').slice(2);
     const last = path.length - 1;
 
-    console.log('path...', pathname, path, params);
+    // console.log('path...', pathname, path, params);
 
     return (
         <div className={s.main}>

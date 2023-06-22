@@ -1,0 +1,120 @@
+{
+    "sections": [
+        {
+            "id": 1,
+            "title": "Computers",
+            "submenu": [
+                { "id": 1, "label": "Моноблоки" },
+                { "id": 2, "label": "Компьютеры" },
+                { "id": 3, "label": "Системные блоки" },
+                { "id": 4, "label": "Микрокомпьютеры" },
+                { "id": 5, "label": "Игровые компьютеры" }
+            ],
+            "image": "computers.jpg",
+            "menubgcolor": "deepskyblue",
+            "bgcolor": "hotpink"
+        },
+        {
+            "id": 2,
+            "title": "Notebooks",
+            "submenu": [
+                { "id": 1, "label": "Недорогие ноутбуки" },
+                { "id": 2, "label": "Игровые ноутбуки" },
+                { "id": 3, "label": "Ультрабуки" },
+                { "id": 4, "label": "Ноутбуки-трансформеры" },
+                { "id": 5, "label": "Ноутбуки Huawei" },
+                { "id": 6, "label": "Ноутбуки MSI" },
+                { "id": 7, "label": "Ноутбуки Apple" }
+            ],
+            "image": "notebooks.jpg",
+            "menubgcolor": "coral",
+            "bgcolor": "aquamarine"
+        },
+        {
+            "id": 3,
+            "title": "Monitors",
+            "submenu": [
+                { "id": 1, "label": "Игровые мониторы" },
+                { "id": 2, "label": "Мониторы 27 дюймов" },
+                { "id": 3, "label": "Мониторы 24 дюйма" },
+                { "id": 4, "label": "4K мониторы" },
+                { "id": 5, "label": "2K мониторы" },
+                { "id": 6, "label": "Мониторы IPS" },
+                { "id": 7, "label": "Изогнутые мониторы" },
+                { "id": 8, "label": "LED панели" }
+            ],
+            "image": "monitors.jpg",
+            "menubgcolor": "aquamarine",
+            "bgcolor": "crimson"
+        },
+        {
+            "id": 4,
+            "title": "Storages",
+            "submenu": [
+                { "id": 1, "label": "Сетевые хранилища NAS" },
+                { "id": 2, "label": "Флешки" },
+                { "id": 3, "label": "Внешние диски" },
+                { "id": 4, "label": "Карты памяти" },
+                { "id": 5, "label": "Картридеры" },
+                { "id": 6, "label": "Оптические диски" }
+            ],
+            "image": "storages.jpg",
+            "menubgcolor": "beige",
+            "bgcolor": "deepskyblue"
+        },
+        {
+            "id": 5,
+            "title": "UPs",
+            "submenu": [
+                { "id": 1, "label": "Сетевые разветвители" },
+                { "id": 2, "label": "Сетевые удлинители" },
+                { "id": 3, "label": "Сетевые фильтры" },
+                { "id": 4, "label": "Источники бесперебойного питания" },
+                { "id": 5, "label": "Сетевые фильтры и удлинители" }
+            ],
+            "image": "image.png",
+            "menubgcolor": "thistle",
+            "bgcolor": "teal"
+        },
+        {
+            "id": 6,
+            "title": "Printers",
+            "submenu": [
+                { "id": 1, "label": "Принтеры" },
+                { "id": 2, "label": "Плоттеры" },
+                { "id": 3, "label": "Копиры" },
+                { "id": 4, "label": "Проекторы" },
+                { "id": 5, "label": "МФУ" },
+                { "id": 6, "label": "Картриджи" },
+                { "id": 7, "label": "Тонеры" },
+                { "id": 8, "label": "Фотобарабаны" },
+                { "id": 9, "label": "Бумага" },
+                { "id": 10, "label": "Термопленки" }
+            ],
+            "image": "image.png",
+            "menubgcolor": "skyblue",
+            "bgcolor": "coral"
+        },
+        {
+            "id": 7,
+            "title": "Accesories",
+            "submenu": [
+                { "id": 1, "label": "Сетевое оборудование" },
+                { "id": 2, "label": "Колонки для компьютера" },
+                { "id": 3, "label": "Bluetooth адаптеры" },
+                { "id": 4, "label": "Powerline адаптеры" },
+                { "id": 5, "label": "Wi-Fi адаптеры" },
+                { "id": 6, "label": "Операционные системы" },
+                { "id": 7, "label": "Офисные приложения" },
+                { "id": 8, "label": "Антивирусы" },
+                { "id": 9, "label": "Утилиты" }
+            ],
+            "image": "image.png",
+            "menubgcolor": "burlywood",
+            "bgcolor": "violet"
+        }
+    ],
+    "product": [
+
+    ]
+}

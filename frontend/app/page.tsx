@@ -1,28 +1,29 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import s from './page.module.sass';
 
-const navItems = [
-    { label: 'Computers' },
-    { label: 'Notebooks' },
-    { label: 'Monitors' },
-    { label: 'Storages' },
-    { label: 'UPs' },
-    { label: 'Printers' },
-    { label: 'Accesories' },
-];
+export async function getSections() {
+    const response = await fetch('http://localhost:3001/sections',
+        { next: { revalidate: 10 } }
+    );
+    if (!response.ok) throw new Error('unable to fetch sections...');
+    return response.json();
+}
 
-export default function Home() {
+export default async function Home() {
+    const sections = await getSections();
+
     return (
         <main className={s.main}>
             <div className={s.layout}>
                 <aside className={s.leftmenu}>
                     <ul>
                         {
-                            navItems.map(item => {
+                            sections.map((item: any) => {
                                 return (
-                                    <div key={item.label}>
-                                        <Link href={`/catalog/${item.label}`}>
-                                            <li>{item.label}</li>
+                                    <div key={item.id}>
+                                        <Link href={`/catalog/${item.title}`}>
+                                            <li>{item.title}</li>
                                         </Link>
                                     </div>
                                 )
@@ -31,7 +32,7 @@ export default function Home() {
                     </ul>
                 </aside>
                 <div className={s.center}>
-                    <img src='/images/frontpage.jpg' alt='frontpage' />
+                    <Image src='/images/frontpage.jpg' width={800} height={600} alt='frontpage' />
                 </div>
             </div>
         </main>
