@@ -7,6 +7,7 @@ async function getSubSection(slug: string) {
     const response = await fetch(`http://localhost:3001/sections?title=${slug}`,
         { cache: 'no-store' }
     );
+
     return response.json();
 }
 

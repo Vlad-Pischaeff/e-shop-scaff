@@ -2,11 +2,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import s from './page.module.sass';
 
-export async function getSections() {
+async function getSections() {
     const response = await fetch('http://localhost:3001/sections',
         { next: { revalidate: 10 } }
     );
+
     if (!response.ok) throw new Error('unable to fetch sections...');
+
     return response.json();
 }
 
