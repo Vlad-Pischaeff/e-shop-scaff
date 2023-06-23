@@ -12,7 +12,7 @@ export function Breadcrumbs() {
     const path = pathname.split('/').slice(2);
     const last = path.length - 1;
 
-    // console.log('path...', pathname, path, params);
+    console.log('path...', pathname, params, path);
 
     return (
         <div className={s.main}>
