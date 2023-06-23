@@ -1,18 +1,16 @@
 import Link from 'next/link';
 import s from './page.module.sass';
 
-export function Navigation(
-    { slug, nav }:
-    { slug: string, nav: any[] }
-) {
+type Props = {
+    slug: string,
+    nav: any[]
+}
 
-    const { menubgcolor } = nav[0];
+export function Navigation(props: Props) {
+    const { slug, nav } = props;
 
     return (
-        <aside
-            className={s.leftmenu}
-            style={{ 'background': menubgcolor }}
-        >
+        <aside className={s.leftmenu}>
             <ul>
                 {
                     nav[0].submenu.map((item: any) => {

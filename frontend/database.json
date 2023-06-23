@@ -150,6 +150,15 @@
             "price": "29 999",
             "oldPrice": "",
             "image": "/catalog/img4.webp"
+        },
+        {
+            "id": 5,
+            "catId": "Computers",
+            "subCatId": "Моноблоки",
+            "name": "\"23.8\" Моноблок MSI PRO AP241 11M-642XRU [9S6-AE0312-815] [Intel Pentium Gold G6405, 2x4.1 ГГц, IPS, Full HD (1920x1080), 8 ГБ DDR4, SSD 256 ГБ, без ОС]",
+            "price": "34 999",
+            "oldPrice": "",
+            "image": "/catalog/img5.webp"
         }
     ]
 }

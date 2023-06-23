@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import s from './page.module.sass';
 
 export function Product(
@@ -6,10 +7,14 @@ export function Product(
 ) {
     return (
         <div key={product.id} className={s.product}>
-            <picture className={s.picture}>
-                <source srcSet={product.image} type="image/webp" />
-                <img src={product.image} alt={product.name} />
-            </picture>
+            <Link href={`/product/${product.id}`} className={s.productImgLink}>
+                <picture className={s.productImgLink_image}>
+                    <img src={product.image} alt={product.name} />
+                </picture>
+                <div className={s.productImgLink_id}>
+                    # {product.id}
+                </div>
+            </Link>
             <div className={s.description}>
                 {product.name}
             </div>

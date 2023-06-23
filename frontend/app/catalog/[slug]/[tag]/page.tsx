@@ -23,15 +23,19 @@ export async function generateMetadata(
     }
 }
 
-export default async function SubCatalog(
-    { params }:
-    { params: { tag: string, slug: string }}
-) {
+type Props = {
+    params: {
+        tag: string,
+        slug: string
+    }
+}
 
-    const { slug, tag } = params;
+export default async function SubCatalog(props: Props) {
+
+    const { slug, tag } = props.params;
     const products = await getProducts(slug, tag);
 
-    console.log('page > Catalog > subCatalog > slug...', params, products)
+    console.log('page > Catalog > subCatalog > slug...', props.params, products)
 
     return (
         <main className={s.main}>
