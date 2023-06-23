@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Product } from './product';
+import { SubCatalogItem } from './subcatalog';
 import s from './page.module.sass';
 
 async function getProducts(slug: string, tag: string) {
@@ -49,7 +49,7 @@ export default async function SubCatalog(props: Props) {
                 </aside>
                 <section className={s.catalog}>
                     { products.length !== 0 &&
-                        products.map((product: any) => <Product product={product} />)
+                        products.map((product: any) => <SubCatalogItem props={{ slug, tag, product }} />)
                     }
                 </section>
 
