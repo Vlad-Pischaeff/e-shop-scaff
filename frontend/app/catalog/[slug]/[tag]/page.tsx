@@ -12,6 +12,31 @@ async function getProducts(slug: string, tag: string) {
     return response.json();
 }
 
+export async function generateStaticParams(props: any) {
+    const sections = await fetch(`http://localhost:3001/sections`).then((res) => res.json())
+
+    const params = sections.map((section: any) => ({
+        tag: section.label,
+    }));
+
+    console.log('✔️ generateStaticParams..[tag]', params, props);
+
+    return params;
+}
+
+// export async function getStaticProps(props: Props) {
+//     const { slug, tag } = props.params;
+//     const products = await getProducts(slug, tag);
+//     console.log('getStaticProps..', products);
+//     return {
+//         props: {
+//             products,
+//             slug,
+//             tag
+//         }
+//     }
+// }
+
 export async function generateMetadata(
     { params }:
     { params: { tag: string, slug: string }}
@@ -30,17 +55,17 @@ type Props = {
     }
 }
 
-export default async function SubCatalog(props: Props) {
-
+// export default async function SubCatalog(props: Props) {
+export default async function SubCatalog(props: any) {
     const { slug, tag } = props.params;
     const products = await getProducts(slug, tag);
-
-    console.log('page > Catalog > subCatalog > slug...', props.params, products)
-
+    // const { products, slug, tag } = props;
+    console.log('✅ subCatalog > slug...', props.params, props)
+    // console.log('page > Catalog > subCatalog > props...', props)
     return (
         <main className={s.main}>
 
-            <h2>{decodeURI(tag)} {products.length} товаров</h2>
+            <h2>{decodeURIComponent(tag)} {products.length} товаров</h2>
 
             <article className={s.layout}>
 

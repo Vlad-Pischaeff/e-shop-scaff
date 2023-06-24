@@ -11,6 +11,18 @@ async function getSubSection(slug: string) {
     return response.json();
 }
 
+export async function generateStaticParams() {
+    const sections = await fetch(`http://localhost:3001/sections`).then((res) => res.json())
+
+    const param = sections.map((section: any) => ({
+        slug: section.title,
+    }));
+
+    console.log('✔️ generateStaticParams [slug]..', param);
+
+    return param;
+}
+
 export async function generateMetadata(
     { params }:
     { params: { slug: string }}
@@ -30,7 +42,7 @@ export default async function Catalog(
     const nav = await getSubSection(slug);
     const { bgcolor } = nav[0];
 
-    console.log('page > Catalog > slug...', slug, params)
+    // console.log('page > Catalog > slug...', slug, params)
 
     return (
         <main className={s.main}>
