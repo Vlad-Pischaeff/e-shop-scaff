@@ -8,8 +8,8 @@ export async function generateStaticParams() {
 }
 
 export default function Layout(
-    { children, params }:
-    { children: React.ReactNode, params: { slug: string} }
+    { children, }:
+    { children: React.ReactNode }
 ) {
 
     return (

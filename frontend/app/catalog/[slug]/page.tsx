@@ -28,7 +28,7 @@ export default async function Catalog(
     const nav = await getSubSection(slug);
     const { bgcolor } = nav[0];
 
-    // console.log('page > Catalog > slug...', slug, params)
+    console.log('✅ page > [slug]...', slug, params)
 
     return (
         <main className={s.main}>
@@ -40,7 +40,7 @@ export default async function Catalog(
                     className={s.center}
                     style={{ 'background': bgcolor }}
                 >
-                    <img src={`/images/${slug}.jpg`} width={800} height={600} alt='frontpage' />
+                    <Image src={`/images/${slug.toLowerCase()}.jpg`} width={800} height={600} alt='frontpage' />
                 </div>
 
             </div>

@@ -46,7 +46,7 @@ export default async function SubCatalog(props: Props) {
     const { slug, tag } = props.params;
     const products = await getProducts(slug, tag);
 
-    console.log('✅ subCatalog > slug...', props.params, props)
+    console.log('✅ page > [tag]...', props.params, props)
 
     return (
         <main className={s.main}>
