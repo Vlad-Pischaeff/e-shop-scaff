@@ -12,30 +12,17 @@ async function getProducts(slug: string, tag: string) {
     return response.json();
 }
 
-export async function generateStaticParams(props: any) {
-    const sections = await fetch(`http://localhost:3001/sections`).then((res) => res.json())
+export async function generateStaticParams(
+    { params: { slug }, }:
+    { params: { slug: string } }
+) {
+    const res = await fetch(`http://localhost:3001/sections?title=${slug}`)
+    const sections = await res.json();
 
-    const params = sections.map((section: any) => ({
+    return sections[0]['submenu'].map((section: any) => ({
         tag: section.label,
     }));
-
-    console.log('✔️ generateStaticParams..[tag]', params, props);
-
-    return params;
 }
-
-// export async function getStaticProps(props: Props) {
-//     const { slug, tag } = props.params;
-//     const products = await getProducts(slug, tag);
-//     console.log('getStaticProps..', products);
-//     return {
-//         props: {
-//             products,
-//             slug,
-//             tag
-//         }
-//     }
-// }
 
 export async function generateMetadata(
     { params }:
@@ -55,13 +42,12 @@ type Props = {
     }
 }
 
-// export default async function SubCatalog(props: Props) {
-export default async function SubCatalog(props: any) {
+export default async function SubCatalog(props: Props) {
     const { slug, tag } = props.params;
     const products = await getProducts(slug, tag);
-    // const { products, slug, tag } = props;
+
     console.log('✅ subCatalog > slug...', props.params, props)
-    // console.log('page > Catalog > subCatalog > props...', props)
+
     return (
         <main className={s.main}>
 

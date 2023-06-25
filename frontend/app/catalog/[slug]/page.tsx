@@ -4,23 +4,9 @@ import { Navigation } from './navigation';
 import s from './page.module.sass';
 
 async function getSubSection(slug: string) {
-    const response = await fetch(`http://localhost:3001/sections?title=${slug}`,
-        { cache: 'no-store' }
-    );
+    const response = await fetch(`http://localhost:3001/sections?title=${slug}`);
 
     return response.json();
-}
-
-export async function generateStaticParams() {
-    const sections = await fetch(`http://localhost:3001/sections`).then((res) => res.json())
-
-    const param = sections.map((section: any) => ({
-        slug: section.title,
-    }));
-
-    console.log('✔️ generateStaticParams [slug]..', param);
-
-    return param;
 }
 
 export async function generateMetadata(
@@ -54,7 +40,7 @@ export default async function Catalog(
                     className={s.center}
                     style={{ 'background': bgcolor }}
                 >
-                    <Image src={`/images/${slug}.jpg`} width={800} height={600} alt='frontpage' />
+                    <img src={`/images/${slug}.jpg`} width={800} height={600} alt='frontpage' />
                 </div>
 
             </div>
