@@ -28,7 +28,7 @@ export default async function Catalog(
     const nav = await getSubSection(slug);
     const { bgcolor } = nav[0];
 
-    console.log('✅ page > [slug]...', slug, params)
+    console.log('\x1b[33;41m✅ page > [slug]...\x1b[0m', slug, params)
 
     return (
         <main className={s.main}>
