@@ -13,12 +13,20 @@ const navItems = [
 
 export default function Actions() {
 
+    const handlerClick = (label: string) => () => {
+        console.log('label...', label)
+    }
+
     return (
         <nav className={s.container}>
             {
                 navItems.map(link => {
                     return (
-                        <div className={s.wrap} key={link.label}>
+                        <div
+                            className={s.wrap}
+                            key={link.label}
+                            onClick={handlerClick(link.label)}
+                        >
                             {link.icon}
                         </div>
                     )

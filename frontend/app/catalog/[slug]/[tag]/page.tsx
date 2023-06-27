@@ -19,7 +19,7 @@ export async function generateMetadata(
     const { slug, tag } = params;
 
     return {
-        title: `shop | ${slug} | ${decodeURI(tag)}`
+        title: `shop | ${slug} | ${decodeURIComponent(tag)}`
     }
 }
 

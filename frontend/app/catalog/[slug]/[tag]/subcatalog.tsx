@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import s from './page.module.sass';
+import Image from 'next/image';
 import Actions from './actions';
+import s from './page.module.sass';
 
 export function SubCatalogItem(
     { props }:
@@ -11,20 +12,22 @@ export function SubCatalogItem(
     return (
         <>
             <div className={s.productWrap}>
-                <Link href={`/catalog/${slug}/${tag}/${product.shortname}`} className={s.productImgLink}>
-                    <picture className={s.productImgLink_image}>
-                        <img src={product.image} alt={product.shortname} />
+                <Link href={`/catalog/${slug}/${tag}/${product.shortname}`}>
+                    <picture className={s.productImg}>
+                        <Image src={product.image} alt={product.shortname} width={128} height={100} />
                     </picture>
                 </Link>
-                <div className={s.description}>
-                    {product.fullname}
-                </div>
-                <div className={s.price}>
+                <Link href={`/catalog/${slug}/${tag}/${product.shortname}`}>
+                    <div className={s.productDesc}>
+                        {product.fullname}
+                    </div>
+                </Link>
+                <div className={s.productPrice}>
                     <span>{product.price} Р</span>
                 </div>
             </div>
             <div className={s.productActions}>
-                <div className={s.productImgLink_id}>
+                <div className={s.productId}>
                     # {product.id}
                 </div>
                 <Actions />
