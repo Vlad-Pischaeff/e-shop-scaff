@@ -3,6 +3,8 @@
 import BarChartIcon from '@mui/icons-material/BarChart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { increment } from "@/store/slices/cartSlice";
+import { useAppDispatch } from "@/store/store";
 import s from './actions.module.sass';
 
 const navItems = [
@@ -11,10 +13,20 @@ const navItems = [
     { label: 'Cart', icon: <AddShoppingCartIcon /> },
 ];
 
-export default function Actions() {
+export default function Actions(
+    { product }:
+    { product: any }
+) {
+    const dispatch = useAppDispatch();
+    const items = {
+        'Compare': () => console.log('Compare...'),
+        'Favorites': () => console.log('Favorites...'),
+        'Cart': () => dispatch(increment(product))
+    } as const;
+    type Actions = keyof typeof items;
 
-    const handlerClick = (label: string) => () => {
-        console.log('label...', label)
+    const handlerClick = (label: Actions) => () => {
+        items[label]();
     }
 
     return (
@@ -25,7 +37,7 @@ export default function Actions() {
                         <div
                             className={s.wrap}
                             key={link.label}
-                            onClick={handlerClick(link.label)}
+                            onClick={handlerClick(link.label as Actions)}
                         >
                             {link.icon}
                         </div>

@@ -1,4 +1,5 @@
 import '@/styles/globals.sass';
+import Providers from '@/components/store/Providers';
 import { MainFooter } from '@/components/MainFooter';
 import { MainHeader } from '@/components/MainHeader';
 import { MainLogo } from '@/components/MainLogo';
@@ -16,11 +17,13 @@ export default function RootLayout(
     return (
         <html lang="en">
             <body>
-                <MainLogo />
-                <MainHeader />
-                <Breadcrumbs />
-                {children}
-                <MainFooter />
+                <Providers>
+                    <MainLogo />
+                    <MainHeader />
+                    <Breadcrumbs />
+                    {children}
+                    <MainFooter />
+                </Providers>
             </body>
         </html>
     )

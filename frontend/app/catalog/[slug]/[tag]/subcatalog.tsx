@@ -30,7 +30,7 @@ export function SubCatalogItem(
                 <div className={s.productId}>
                     # {product.id}
                 </div>
-                <Actions />
+                <Actions product={product} />
             </div>
         </>
 
