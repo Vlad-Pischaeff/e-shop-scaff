@@ -4,8 +4,8 @@ export type Product = {
     "subCatId": string,
     "shortname": string,
     "fullname": string,
-    "price": string,
-    "oldPrice": string,
+    "price": number,
+    "oldPrice": number,
     "image": string
 }
 

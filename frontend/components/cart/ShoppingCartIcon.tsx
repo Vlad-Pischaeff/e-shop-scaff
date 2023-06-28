@@ -5,7 +5,7 @@ import { totalCartItemsSelector } from "@/store/slices/cartSlice";
 import { useAppSelector } from "@/store/store";
 import s from './ShoppingCartIcon.module.sass';
 
-export default function ShoppingCartIcon() {
+export function ShoppingCartIcon() {
     const totalItems = useAppSelector(totalCartItemsSelector);
 
     return (

@@ -1,6 +1,6 @@
 'use client';
 
-import ShoppingCartIcon from '@/components/cart/ShoppingCartIcon';
+import { ShoppingCartIcon } from '@/components/cart/ShoppingCartIcon';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import { IconNavLink } from './MainIconNav.link';
 import s from './MainIconNav.module.sass';

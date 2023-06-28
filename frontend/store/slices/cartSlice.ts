@@ -61,6 +61,7 @@ export const totalCartItemsSelector = createSelector(
             0
         )
 );
+
 export const TotalPriceSelector = createSelector(
     [cartItems],
     (cartItems) =>

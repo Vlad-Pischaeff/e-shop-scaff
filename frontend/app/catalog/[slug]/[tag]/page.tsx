@@ -56,6 +56,7 @@ export default async function SubCatalog(props: Props) {
                             )
                         })
                     }
+                    <h3 className={s.paginator}>Pagination</h3>
                 </section>
 
             </article>
