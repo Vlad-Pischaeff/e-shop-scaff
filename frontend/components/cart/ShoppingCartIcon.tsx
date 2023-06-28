@@ -9,7 +9,7 @@ export function ShoppingCartIcon() {
     const totalItems = useAppSelector(totalCartItemsSelector);
 
     return (
-        <div className={s.container}>
+        <div className={`${s.container} ${!!totalItems ? s.s64 : s.s40}`}>
             <ShoppingCartOutlinedIcon />
             { !!totalItems &&
                 <div className={s.value}>

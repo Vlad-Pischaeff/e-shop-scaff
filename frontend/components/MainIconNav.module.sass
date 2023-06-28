@@ -7,27 +7,19 @@
     gap: 8px
 
 .link
-    height: 3rem
-    width: 3rem
-    display: flex
-    align-items: center
+    height: 2.5rem
+    width: 2.5rem
+    display: grid
+    place-items: center
     color: gray
     font-size: 1rem
     text-transform: uppercase
-    &Wrap
-        height: 100%
-        width: 100%
-        display: flex
-        justify-content: center
-        align-items: center
-        border-radius: 50%
-        border: 1px solid var(--brd-color)
+    border-radius: 50%
+    border: 1px solid var(--brd-color)
     &:hover
         color: orangered
-    &:hover &Wrap
         border: 1px solid var(--menu-hover)
 
 .active
     color: #555
-    & .linkWrap
-        background: var(--bg-hover)
+    background: var(--bg-hover)

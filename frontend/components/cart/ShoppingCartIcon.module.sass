@@ -2,9 +2,13 @@
     position: relative
     display: grid
     place-items: center
-    & svg
-        width: 2rem
-        height: 2rem
+    border-radius: 50%
+    border: 1px solid var(--brd-color)
+    color: gray
+    &:hover
+        cursor: pointer
+        color: orangered
+        border: 1px solid var(--menu-hover)
 .value
     position: absolute
     display: flex
@@ -12,9 +16,19 @@
     align-items: center
     width: 24px
     height: 24px
-    top: -16px
-    right: -14px
+    top: -4px
+    right: -4px
     color: white
     background: orangered
     border-radius: 50%
 
+.s40
+    width: 2.5rem
+    height: 2.5rem
+
+.s64
+    width: 3rem
+    height: 3rem
+    & svg
+        width: 2rem
+        height: 2rem

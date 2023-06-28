@@ -1,19 +1,21 @@
 'use client';
 
 import { ShoppingCartIcon } from '@/components/cart/ShoppingCartIcon';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import { IconNavLink } from './MainIconNav.link';
 import s from './MainIconNav.module.sass';
 
-const navItems2 = [
+const navItems = [
+    { label: 'Favorites', href: "/favorite", icon: <FavoriteBorderIcon /> },
     { label: 'Profile', href: "/profile", icon: <PersonOutlineOutlinedIcon /> },
-    { label: 'Cart', href: "/cart", icon: <ShoppingCartIcon /> },
 ];
 
 export function MainIconNavContainer() {
     return (
         <div className={s.container}>
-            <IconNavLink navLinks={navItems2} />
+            <IconNavLink navLinks={navItems} />
+            <ShoppingCartIcon />
         </div>
     )
 }
