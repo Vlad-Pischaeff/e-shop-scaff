@@ -50,8 +50,8 @@ export const cartSlice = createSlice({
     },
 });
 
-const cartItems = (state: RootState) => state.cart.cartItems;
 export const selectCartItems = (state: RootState) => state.cart.cartItems;
+const cartItems = selectCartItems;
 
 export const productQtyInCartSelector = createSelector(
     [cartItems, (cartItems, productId: number) => productId],
