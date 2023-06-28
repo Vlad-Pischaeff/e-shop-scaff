@@ -28,7 +28,7 @@ export function IconNavLink({ navLinks }: Props) {
                             href={link.href}
                             className={`${s.link} ${isActive ? s.active : ''}`}
                         >
-                            <div className={s.wrap}>
+                            <div className={s.linkWrap}>
                                 {link.icon}
                             </div>
                         </Link>

@@ -5,29 +5,29 @@
     align-items: center
     padding: 0 8px
     gap: 8px
-.wrap
-    height: 2.5rem
-    width: 2.5rem
-    display: flex
-    justify-content: center
-    align-items: center
-    border-radius: 50%
-    border: 1px solid var(--brd-color)
 
 .link
+    height: 3rem
+    width: 3rem
     display: flex
     align-items: center
     color: gray
     font-size: 1rem
-    height: 100%
-    padding: 8px 0
     text-transform: uppercase
+    &Wrap
+        height: 100%
+        width: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 50%
+        border: 1px solid var(--brd-color)
     &:hover
         color: orangered
-    &:hover .wrap
+    &:hover &Wrap
         border: 1px solid var(--menu-hover)
 
 .active
     color: #555
-    & .wrap
+    & .linkWrap
         background: var(--bg-hover)

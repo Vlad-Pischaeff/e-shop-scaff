@@ -121,8 +121,8 @@
             "subCatId": "Моноблоки",
             "shortname": "23.8\" Моноблок Rombica Aster [PCAI-0022]",
             "fullname": "23.8\" Моноблок Rombica Aster [PCAI-0022] [Intel Celeron N4020, 2x1.1 ГГц, IPS, Full HD (1920x1080), 4 ГБ DDR4, SSD 256 ГБ, Windows 11 Pro]",
-            "price": "22 999",
-            "oldPrice": "",
+            "price": 22999,
+            "oldPrice": 0,
             "image": "/catalog/img1.webp"
         },
         {
@@ -131,8 +131,8 @@
             "subCatId": "Моноблоки",
             "shortname": "21.5\" Моноблок Rombica Aster [PCAI-0004]",
             "fullname": "21.5\" Моноблок Rombica Aster [PCAI-0004] [Intel Celeron N4020, 2x1.1 ГГц, IPS, Full HD (1920x1080), 4 ГБ DDR4, SSD 256 ГБ, без ОС]",
-            "price": "25 999",
-            "oldPrice": "",
+            "price": 25999,
+            "oldPrice": 0,
             "image": "/catalog/img2.webp"
         },
         {
@@ -141,8 +141,8 @@
             "subCatId": "Моноблоки",
             "shortname": "23.8\" Моноблок Teclast C24 [C24 Air 425BB8G256RUC]",
             "fullname": "23.8\" Моноблок Teclast C24 [C24 Air 425BB8G256RUC] [AMD R-Series RX-425BB, 4x2.5 ГГц, IPS, Full HD (1920x1080), 8 ГБ DDR3, SSD 256 ГБ, без ОС]",
-            "price": "29 799",
-            "oldPrice": "",
+            "price": 29799,
+            "oldPrice": 0,
             "image": "/catalog/img3.webp"
         },
         {
@@ -151,8 +151,8 @@
             "subCatId": "Моноблоки",
             "shortname": "23.8\" Моноблок DEXP AIO-MC [24HP8D004]",
             "fullname": "23.8\" Моноблок DEXP AIO-MC [24HP8D004] [Intel Pentium Gold 7400, 2x3.7 ГГц, IPS, Full HD (1920x1080), 8 ГБ DDR4, SSD 256 ГБ, без ОС]",
-            "price": "29 999",
-            "oldPrice": "",
+            "price": 29999,
+            "oldPrice": 0,
             "image": "/catalog/img4.webp"
         },
         {
@@ -161,8 +161,8 @@
             "subCatId": "Моноблоки",
             "shortname": "23.8\" Моноблок MSI PRO AP241 11M-642XRU [9S6-AE0312-815]",
             "fullname": "23.8\" Моноблок MSI PRO AP241 11M-642XRU [9S6-AE0312-815] [Intel Pentium Gold G6405, 2x4.1 ГГц, IPS, Full HD (1920x1080), 8 ГБ DDR4, SSD 256 ГБ, без ОС]",
-            "price": "34 999",
-            "oldPrice": "",
+            "price": 34999,
+            "oldPrice": 0,
             "image": "/catalog/img5.webp"
         }
     ]

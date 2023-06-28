@@ -23,7 +23,7 @@ export function SubCatalogItem(
                     </div>
                 </Link>
                 <div className={s.productPrice}>
-                    <span>{product.price} Р</span>
+                    <span>{product.price.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}</span>
                 </div>
             </div>
             <div className={s.productActions}>

@@ -1,7 +1,7 @@
 'use client';
 
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { totalCartItemsSelector } from "@/store/slices/cartSlice";
+import { totalCartItemsSelector } from "@/store/slices/cartSliceObj";
 import { useAppSelector } from "@/store/store";
 import s from './ShoppingCartIcon.module.sass';
 

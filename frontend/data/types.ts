@@ -13,3 +13,8 @@ export type CartItem = {
     product: Product,
     qty: number
 }
+
+export type Cart = {
+    cartItems: Record<Product["id"], CartItem>
+    version: number
+}

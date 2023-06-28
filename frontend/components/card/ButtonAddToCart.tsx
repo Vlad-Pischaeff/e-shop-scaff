@@ -1,7 +1,7 @@
 'use client';
 
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import { increment } from "@/store/slices/cartSlice";
+import { increment } from "@/store/slices/cartSliceObj";
 import { useAppDispatch } from "@/store/store";
 import s from './ButtonAddToCart.module.sass';
 
