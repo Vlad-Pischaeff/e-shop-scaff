@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { totalCartItemsSelector } from "@/store/slices/cartSliceObj";
 import { useAppSelector } from "@/store/store";
@@ -10,7 +11,12 @@ export function ShoppingCartIcon() {
 
     return (
         <div className={`${s.container} ${!!totalItems ? s.s64 : s.s40}`}>
-            <ShoppingCartOutlinedIcon />
+            <Link
+                href={'/cart'}
+                className={s.link}
+            >
+                <ShoppingCartOutlinedIcon />
+            </Link>
             { !!totalItems &&
                 <div className={s.value}>
                     {totalItems}
