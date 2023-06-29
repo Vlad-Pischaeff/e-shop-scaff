@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import { totalCartItemsSelector } from "@/store/slices/cartSlice";
 import { useAppSelector } from "@/store/store";
 import s from './cart.module.sass';
@@ -15,7 +16,10 @@ export function ShoppingCartIcon() {
                 href={'/cart'}
                 className={s.link}
             >
-                <ShoppingCartOutlinedIcon />
+                {!!totalItems
+                    ? <LocalGroceryStoreIcon />
+                    : <ShoppingCartOutlinedIcon />
+                }
             </Link>
             { !!totalItems &&
                 <div className={s.value}>
