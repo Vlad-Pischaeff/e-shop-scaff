@@ -17,22 +17,22 @@ export default function CartPage() {
 
     return (
         <form className={s.cartContainer} onSubmit={handlerSubmit}>
-            <div className={s.cartItemsContainer}>
+            <section className={s.cartItemsContainer}>
                 {Object.values(cartItems).map((item) => (
                     <div key={item.product.id}>
                         <ShoppingCartItem item={item} />
                     </div>
                 ))}
-            </div>
+            </section>
 
-            <p className={s.total}>
+            <section className={s.total}>
                 <span className={s.totalTitle}>
                     Total Price:{" "}
                 </span>
                 <span className={s.totalPrice}>
                     {totalPrice.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}
                 </span>
-            </p>
+            </section>
             <button className={`${s.payment} ${totalPrice !== 0 ? s.paymentOn : s.paymentOff}`} type="submit">
                 Payment
             </button>
