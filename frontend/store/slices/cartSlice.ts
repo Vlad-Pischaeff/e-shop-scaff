@@ -78,6 +78,6 @@ export const TotalPriceSelector = createSelector(
         )
 );
 
-export const { increment, decrement } = cartSlice.actions;
+export const { increment, decrement, removeItem, clearCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { totalCartItemsSelector } from "@/store/slices/cartSliceObj";
+import { totalCartItemsSelector } from "@/store/slices/cartSlice";
 import { useAppSelector } from "@/store/store";
-import s from './ShoppingCartIcon.module.sass';
+import s from './cart.module.sass';
 
 export function ShoppingCartIcon() {
     const totalItems = useAppSelector(totalCartItemsSelector);
