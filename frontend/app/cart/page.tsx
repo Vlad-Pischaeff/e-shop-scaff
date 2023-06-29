@@ -10,8 +10,13 @@ export default function CartPage() {
     const cartItems = useAppSelector(selectCartItems);
     const totalPrice = useAppSelector(TotalPriceSelector);
 
+    const handlerSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log('payment...');
+    }
+
     return (
-        <section className={s.cartContainer}>
+        <form className={s.cartContainer} onSubmit={handlerSubmit}>
             <div className={s.cartItemsContainer}>
                 {Object.values(cartItems).map((item) => (
                     <div key={item.product.id}>
@@ -28,6 +33,9 @@ export default function CartPage() {
                     {totalPrice.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}
                 </span>
             </p>
-        </section>
+            <button className={`${s.payment} ${totalPrice !== 0 ? s.paymentOn : s.paymentOff}`} type="submit">
+                Payment
+            </button>
+        </form>
     );
 };

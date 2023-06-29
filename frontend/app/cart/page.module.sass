@@ -9,11 +9,26 @@
     display: flex
     justify-content: space-between
     align-items: center
+    padding: 16px 0
     &Title
         color: gray
     &Price
         font-size: 1.5rem
         font-weight: bold
+.payment
+    padding: 8px 16px
+    border-radius: 8px
+    font-size: 1.5rem
+    border: none
+    &Off
+        background: lightblue
+        color: darkgrey
+    &On
+        background: coral
+        color: white
+        &:hover
+            cursor: pointer
+            background: orangered
 
 @media (min-width: 1200px)
     .cartContainer
