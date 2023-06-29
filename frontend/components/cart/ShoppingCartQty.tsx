@@ -16,20 +16,23 @@ export function ShoppingCartQty({ item }: Props) {
     const dispatch = useAppDispatch();
 
     return (
-        <div className={s.itemQty}>
-            {item.qty === 1
-                ? (<DeleteOutlineIcon
-                        className={s.itemBtn}
-                        onClick={() => dispatch(removeItem(item.product.id))} />)
-                : (<RemoveCircleOutlineIcon
-                        className={s.itemBtn}
-                        onClick={() => dispatch(decrement(item.product))} />)
-            }
-            <p>{item.qty}</p>
-            <AddCircleOutlineIcon
+        <div>
+            <div className={s.itemQty}>
+                {item.qty === 1
+                    ? (<RemoveCircleOutlineIcon className={s.itemBtnDisbl} />)
+                    : (<RemoveCircleOutlineIcon
+                            className={s.itemBtn}
+                            onClick={() => dispatch(decrement(item.product))} />)
+                }
+                <p>{item.qty}</p>
+                <AddCircleOutlineIcon
+                    className={s.itemBtn}
+                    onClick={() => dispatch(increment(item.product))} />
+            </div>
+            <DeleteOutlineIcon
                 className={s.itemBtn}
-                onClick={() => dispatch(increment(item.product))}
-            />
+                onClick={() => dispatch(removeItem(item.product.id))} />
         </div>
+
     );
 };
