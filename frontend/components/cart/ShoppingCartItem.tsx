@@ -29,7 +29,7 @@ export function ShoppingCartItem({ item }: Props) {
                 </p>
             </div>
 
-            <div>
+            <div className={s.itemQtyWrap}>
                 <p className={s.itemCost}>
                     {item.product.price.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}
                 </p>

@@ -1,6 +1,5 @@
 "use client";
 
-import React from 'react';
 import { TotalPriceSelector, selectCartItems } from '@/store/slices/cartSlice';
 import { useAppSelector } from '@/store/store';
 import { ShoppingCartItem } from '@/components/cart/ShoppingCartItem';
