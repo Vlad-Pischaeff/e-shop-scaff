@@ -15,26 +15,28 @@ export default function CartPage() {
     }
 
     return (
-        <form className={s.cartContainer} onSubmit={handlerSubmit}>
-            <section className={s.cartItemsContainer}>
-                {Object.values(cartItems).map((item) => (
-                    <div key={item.product.id}>
-                        <ShoppingCartItem item={item} />
-                    </div>
-                ))}
-            </section>
+        <main className={s.cartContainer}>
+            <form onSubmit={handlerSubmit}>
+                <section className={s.cartItemsContainer}>
+                    {Object.values(cartItems).map((item) => (
+                        <div key={item.product.id}>
+                            <ShoppingCartItem item={item} />
+                        </div>
+                    ))}
+                </section>
 
-            <section className={s.total}>
-                <span className={s.totalTitle}>
-                    Total Price:{" "}
-                </span>
-                <span className={s.totalPrice}>
-                    {totalPrice.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}
-                </span>
-            </section>
-            <button className={`${s.payment} ${totalPrice !== 0 ? s.paymentOn : s.paymentOff}`} type="submit">
-                Payment
-            </button>
-        </form>
+                <section className={s.total}>
+                    <span className={s.totalTitle}>
+                        Total Price:{" "}
+                    </span>
+                    <span className={s.totalPrice}>
+                        {totalPrice.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}
+                    </span>
+                </section>
+                <button className={`${s.payment} ${totalPrice !== 0 ? s.paymentOn : s.paymentOff}`} type="submit">
+                    Payment
+                </button>
+            </form>
+        </main>
     );
 };
