@@ -1,6 +1,5 @@
-import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CartItem, Product, Cart } from "@/data/types";
-import { RootState } from "@/store/store";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Product, Cart } from "@/data/types";
 
 const initialState: Cart = {
     cartItems: {},
@@ -16,7 +15,7 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         /** Increments the quantity of a product in the cart. */
-        increment: (state, action: PayloadAction<Product>) => {
+        increment: (state: Cart, action: PayloadAction<Product>) => {
             const productInCart = getProductFromCart(state, action.payload.id);
 
             if (productInCart) {
@@ -29,62 +28,31 @@ export const cartSlice = createSlice({
             }
         },
         /** Decrements the quantity of a product in the cart. */
-        decrement: (state, action: PayloadAction<Product>) => {
+        decrement: (state: Cart, action: PayloadAction<Product>) => {
             const productInCart = getProductFromCart(state, action.payload.id);
 
-            if (!productInCart) {
-                return;
-            }
+            if (!productInCart) return;
 
             if (productInCart.qty > 1) {
                 productInCart.qty -= 1;
             } else {
-                delete state.cartItems[action.payload.id]
+                delete state.cartItems[action.payload.id];
             }
         },
         /** Removes item from the cart. */
-        removeItem: (state, action: PayloadAction<Product["id"]>) => {
+        removeItem: (state: Cart, action: PayloadAction<Product["id"]>) => {
             const productInCart = getProductFromCart(state, action.payload);
 
-            if (!productInCart) {
-                return;
-            }
+            if (!productInCart) return;
+
             delete state.cartItems[action.payload];
         },
         /** Removes all items from the cart. */
-        clearCart: (state) => {
+        clearCart: (state: Cart) => {
             state.cartItems = {};
         },
     },
 });
-
-// export const selectCartItems = (state: RootState) => state.cart.cartItems;
-// const cartItems = selectCartItems;
-
-// export const productQtyInCartSelector = createSelector(
-//     [cartItems, (cartItems, productId: number) => productId],
-//     (cartItems, productId) => cartItems[productId]?.qty
-// );
-
-// export const totalCartItemsSelector = createSelector(
-//     [cartItems],
-//     (cartItems) =>
-//         Object.values(cartItems).reduce(
-//             (total: number, el: CartItem) =>
-//                 (total += el.qty),
-//             0
-//         )
-// );
-
-// export const TotalPriceSelector = createSelector(
-//     [cartItems],
-//     (cartItems) =>
-//         Object.values(cartItems).reduce(
-//             (total: number, curr: CartItem) =>
-//                 (total += curr.qty * curr.product.price),
-//             0
-//         )
-// );
 
 export const { increment, decrement, removeItem, clearCart } = cartSlice.actions;
 
