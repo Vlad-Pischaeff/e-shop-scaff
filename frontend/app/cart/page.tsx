@@ -1,6 +1,6 @@
 "use client";
 
-import { TotalPriceSelector, selectCartItems } from '@/store/slices/cartSlice';
+import { TotalPriceSelector, selectCartItems } from '@/store/slices/selectors';
 import { useAppSelector } from '@/store/store';
 import { ShoppingCartItem } from '@/components/cart/ShoppingCartItem';
 import s from './page.module.sass';

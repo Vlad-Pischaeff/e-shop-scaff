@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
-import { totalCartItemsSelector } from "@/store/slices/cartSlice";
+import { totalCartItemsSelector } from "@/store/slices/selectors";
 import { useAppSelector } from "@/store/store";
 import s from './cart.module.sass';
 
