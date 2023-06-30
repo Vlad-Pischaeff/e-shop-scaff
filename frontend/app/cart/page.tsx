@@ -16,6 +16,7 @@ export default function CartPage() {
 
     return (
         <main className={s.cartContainer}>
+            <p className={s.title}>Корзина</p>
             <form onSubmit={handlerSubmit}>
                 <section className={s.cartItemsContainer}>
                     {Object.values(cartItems).map((item) => (
