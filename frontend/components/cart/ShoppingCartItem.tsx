@@ -36,12 +36,12 @@ export function ShoppingCartItem({ item }: Props) {
 
                 <ShoppingCartQty item={item} />
             </div>
-            <p className={s.itemSumm}>
+            <div className={s.itemSumm}>
                 {
                     (item.qty * item.product.price)
                         .toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })
                 }
-            </p>
+            </div>
         </div>
     );
 };
