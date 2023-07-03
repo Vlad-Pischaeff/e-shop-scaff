@@ -9,6 +9,7 @@ export default function CartPage() {
     const cartItems = useAppSelector(selectCartItems);
     const totalCartItems = useAppSelector(totalCartItemsSelector);
     const totalPrice = useAppSelector(TotalPriceSelector);
+    const totalCartPcs = Object.keys(cartItems).length;
 
     const handlerSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -22,7 +23,7 @@ export default function CartPage() {
                     <p className={s.title}>
                         <span>Корзина</span>
                         {
-                            Object.keys(cartItems).length === 0
+                            totalCartPcs === 0
                                 ? ' пустая'
                                 : ' ' + totalCartItems + ' товаров'
                         }
@@ -52,7 +53,7 @@ export default function CartPage() {
                                 Items:
                             </span>
                             <span className={s.totalPriceAmount}>
-                                {Object.keys(cartItems).length}
+                                {totalCartPcs}
                             </span>
                         </div>
                         <div className={s.totalPrice}>
