@@ -16,17 +16,18 @@ export default function CartPage() {
     }
 
     return (
-        <main className={s.cartContainer}>
-            <section className={s.items}>
-                <p className={s.title}>
-                    <span>Корзина</span>
-                    {
-                        Object.keys(cartItems).length === 0
-                            ? ' пустая'
-                            : ' ' + totalCartItems + ' товаров'
-                    }
-                </p>
-                <form onSubmit={handlerSubmit}>
+        <main>
+            <form onSubmit={handlerSubmit} className={s.cartContainer}>
+                <section className={s.items}>
+                    <p className={s.title}>
+                        <span>Корзина</span>
+                        {
+                            Object.keys(cartItems).length === 0
+                                ? ' пустая'
+                                : ' ' + totalCartItems + ' товаров'
+                        }
+                    </p>
+
                     <div className={s.cartItemsContainer}>
                         {Object.values(cartItems).map((item) => (
                             <div key={item.product.id}>
@@ -34,40 +35,40 @@ export default function CartPage() {
                             </div>
                         ))}
                     </div>
-                </form>
-            </section>
+                </section>
 
-            <section className={s.amount}>
-                <div className={s.total}>
-                    <div className={s.totalPrice}>
-                        <span className={s.totalPriceTitle}>
-                            Total:
-                        </span>
-                        <span className={s.totalPriceAmount}>
-                            {totalPrice.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}
-                        </span>
+                <section className={s.amount}>
+                    <div className={s.total}>
+                        <div className={s.totalPrice}>
+                            <span className={s.totalPriceTitle}>
+                                Total:
+                            </span>
+                            <span className={s.totalPriceAmount}>
+                                {totalPrice.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}
+                            </span>
+                        </div>
+                        <div className={s.totalPrice}>
+                            <span className={s.totalPriceTitle}>
+                                Items:
+                            </span>
+                            <span className={s.totalPriceAmount}>
+                                {Object.keys(cartItems).length}
+                            </span>
+                        </div>
+                        <div className={s.totalPrice}>
+                            <span className={s.totalPriceTitle}>
+                                Pcs:
+                            </span>
+                            <span className={s.totalPriceAmount}>
+                                {totalCartItems}
+                            </span>
+                        </div>
+                        <button className={`${s.payment} ${totalPrice !== 0 ? s.paymentOn : s.paymentOff}`} type="submit">
+                            Payment
+                        </button>
                     </div>
-                    <div className={s.totalPrice}>
-                        <span className={s.totalPriceTitle}>
-                            Items:
-                        </span>
-                        <span className={s.totalPriceAmount}>
-                            {Object.keys(cartItems).length}
-                        </span>
-                    </div>
-                    <div className={s.totalPrice}>
-                        <span className={s.totalPriceTitle}>
-                            Pcs:
-                        </span>
-                        <span className={s.totalPriceAmount}>
-                            {totalCartItems}
-                        </span>
-                    </div>
-                </div>
-                <button className={`${s.payment} ${totalPrice !== 0 ? s.paymentOn : s.paymentOff}`} type="submit">
-                    Payment
-                </button>
-            </section>
+                </section>
+            </form>
         </main>
     );
 };
