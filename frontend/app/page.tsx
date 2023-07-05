@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import s from './page.module.sass';
+import { Navigation } from './navigation';
 
 async function getSections() {
     const response = await fetch('http://localhost:3001/sections',
@@ -18,24 +18,13 @@ export default async function Home() {
     return (
         <main className={s.main}>
             <div className={s.layout}>
-                <aside className={s.leftmenu}>
-                    <ul>
-                        {
-                            sections.map((item: any) => {
-                                return (
-                                    <div key={item.id}>
-                                        <Link href={`/catalog/${item.title}`}>
-                                            <li>{item.title}</li>
-                                        </Link>
-                                    </div>
-                                )
-                            })
-                        }
-                    </ul>
-                </aside>
+
+                <Navigation sections={sections} />
+
                 <div className={s.center}>
                     <Image src='/images/frontpage.jpg' width={800} height={600} alt='frontpage' />
                 </div>
+
             </div>
         </main>
     )
