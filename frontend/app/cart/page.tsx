@@ -22,22 +22,22 @@ export default function CartPage() {
         <main>
             <section className={s.cartContainer}>
                 <section className={s.items}>
-                    <CartTitle>
+                    <StyledCartTitle>
                         <span>Корзина</span>
                         {
                             totalCartPcs === 0
                                 ? ' пустая'
                                 : ' ' + totalCartItems + ' товаров'
                         }
-                    </CartTitle>
+                    </StyledCartTitle>
 
-                    <ItemsContainer>
+                    <StyledItemsContainer>
                         {Object.values(cartItems).map((item) => (
                             <div key={item.product.id}>
                                 <ShoppingCartItem item={item} />
                             </div>
                         ))}
-                    </ItemsContainer>
+                    </StyledItemsContainer>
                 </section>
 
                 <CartSummary onSubmit={handlerSubmit}>
@@ -58,13 +58,13 @@ export default function CartPage() {
 };
 
 
-const CartTitle = styled.p`
+const StyledCartTitle = styled.p`
     font-size: 1.8rem;
     color: gray;
     padding: 1rem 0;
 `;
 
-const ItemsContainer = styled.div`
+const StyledItemsContainer = styled.div`
     display: flex;
     flex-flow: column;
     gap: 4px;
