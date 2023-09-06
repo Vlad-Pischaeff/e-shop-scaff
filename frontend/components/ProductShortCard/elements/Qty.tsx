@@ -15,18 +15,18 @@ export function Qty() {
         <div>
             <QtyWrap>
                 {item.qty === 1
-                    ? (<RemoveCircleOutlineIcon className={s.itemBtnDisbl} />)
+                    ? (<RemoveCircleOutlineIcon className={s.iconDisbl} />)
                     : (<RemoveCircleOutlineIcon
-                            className={s.itemBtn}
+                            className={s.icon}
                             onClick={() => dispatch(decrement(item.product))} />)
                 }
                 <p>{item.qty}</p>
                 <AddCircleOutlineIcon
-                    className={s.itemBtn}
+                    className={s.icon}
                     onClick={() => dispatch(increment(item.product))} />
             </QtyWrap>
             <DeleteOutlineIcon
-                className={s.itemBtn}
+                className={s.icon}
                 onClick={() => dispatch(removeItem(item.product.id))} />
         </div>
     );
