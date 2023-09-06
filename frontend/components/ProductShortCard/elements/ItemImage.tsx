@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+import { useProductContext } from '../useProductContext';
 
-export function ItemImage(
-    { image, alt }:
-    { image: string, alt: string }
-) {
+export function ItemImage() {
+    const item = useProductContext();
+
     return (
         <StyledImage>
             <Image
-                src={image}
+                src={item.product.image}
                 width={128}
                 height={100}
-                alt={alt}
+                alt={item.product.shortname}
             />
         </StyledImage>
     )

@@ -1,7 +1,6 @@
+import styled from 'styled-components';
 import { ProductShortCard } from '@/components/ProductShortCard';
-import { ShoppingCartQty } from './ShoppingCartQty';
 import { CartItem } from '@/data/types';
-import s from './cart.module.sass';
 
 export function ShoppingCartItem(
     { item }:
@@ -9,19 +8,35 @@ export function ShoppingCartItem(
 ) {
 
     return (
-        <ProductShortCard product={item.product}>
-            <ProductShortCard.ItemImage image={item.product.image} alt={item.product.shortname} />
+        <ProductShortCard item={item}>
+            <ProductShortCard.ItemImage />
 
-            <div className={s.itemName}>
-                <ProductShortCard.NameShort name={item.product.shortname} />
-                <ProductShortCard.NameFull name={item.product.fullname} />
-            </div>
+            <DescWrap>
+                <ProductShortCard.NameShort />
+                <ProductShortCard.NameFull />
+            </DescWrap>
 
-            <div className={s.itemQtyWrap}>
-                <ProductShortCard.Price price={item.product.price} />
-                <ShoppingCartQty item={item} />
-            </div>
-            <ProductShortCard.Cost cost={(item.qty * item.product.price)} />
+            <QtyWrap>
+                <ProductShortCard.Price />
+                <ProductShortCard.Qty />
+            </QtyWrap>
+            <ProductShortCard.Cost />
         </ProductShortCard>
     );
 };
+
+const DescWrap = styled.div`
+    flex: 1 1 50%;
+    display: flex;
+    flex-flow: column;
+    gap: 8px;
+`;
+const QtyWrap = styled.div`
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-self: stretch;
+    padding: 0 8px;
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee;
+`;

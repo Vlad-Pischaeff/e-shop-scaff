@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useProductContext } from '../useProductContext';
 
-export function Price(
-    { price }:
-    { price: number }
-) {
+export function Price() {
+    const item = useProductContext();
+
     return (
         <StyledPrice>
-            { price.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' }) }
+            { item.product.price.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' }) }
         </StyledPrice>
     )
 }

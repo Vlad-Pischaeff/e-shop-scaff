@@ -1,12 +1,13 @@
 import React from "react";
+import { CartItem } from '@/data/types';
 
-const ProductContext = React.createContext({});
+const ProductContext = React.createContext<CartItem | undefined>(undefined);
 
 function ProductProvider(
     { children, value }:
     {
         children: React.ReactNode,
-        value: object
+        value: CartItem
     }
 ) {
     return (

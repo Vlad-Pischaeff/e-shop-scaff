@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Product } from '@/data/types';
+import { CartItem } from '@/data/types';
 import { ProductProvider } from './useProductContext';
-import { ItemImage, Cost, Price, NameFull, NameShort } from './elements';
+import { ItemImage, Cost, Price, NameFull, NameShort, Qty } from './elements';
 
 function ProductShortCard(
-    { children, product }:
+    { children, item }:
     {
         children: React.ReactNode,
-        product: Product
+        item: CartItem
     }
 ) {
     return (
-        <ProductProvider value={{ product }}>
+        <ProductProvider value={ item }>
             <StyledCard>
                 {children}
             </StyledCard>
@@ -29,10 +29,11 @@ const StyledCard = styled.div`
     background: #ffffffb4;
 `;
 
-ProductShortCard.ItemImage = ItemImage;
+ProductShortCard.Qty = Qty;
 ProductShortCard.Cost = Cost;
 ProductShortCard.Price = Price;
 ProductShortCard.NameFull = NameFull;
 ProductShortCard.NameShort = NameShort;
+ProductShortCard.ItemImage = ItemImage;
 
 export { ProductShortCard };

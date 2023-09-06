@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useProductContext } from '../useProductContext';
 
-export function NameFull(
-    { name }:
-    { name: string }
-) {
+export function NameFull() {
+    const item = useProductContext();
+
     return (
         <StyledName>
-            {name}
+            {item.product.fullname}
         </StyledName>
     )
 }

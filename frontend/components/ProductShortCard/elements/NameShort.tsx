@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useProductContext } from '../useProductContext';
 
-export function NameShort(
-    { name }:
-    { name: string }
-) {
+export function NameShort() {
+    const item = useProductContext();
+
     return (
         <StyledName>
-            {name}
+            {item.product.shortname}
         </StyledName>
     )
 }
