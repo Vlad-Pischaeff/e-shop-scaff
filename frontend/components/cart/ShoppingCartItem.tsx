@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ProductShortCard } from '@/components/ProductShortCard';
+import { ProductShortCard } from '@/components/templates/ProductShortCard';
 import { CartItem } from '@/data/types';
 
 export function ShoppingCartItem(
@@ -41,6 +41,7 @@ const DescWrap = styled.div`
     flex-flow: column;
     gap: 8px;
 `;
+
 const QtyWrap = styled.div`
     display: flex;
     flex-flow: column;
