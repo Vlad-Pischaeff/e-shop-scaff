@@ -9,7 +9,10 @@ export function ShoppingCartItem(
 
     return (
         <ProductShortCard item={item}>
-            <ProductShortCard.ItemImage />
+
+            <ImgWrap>
+                <ProductShortCard.ItemImage width={180} height={120} />
+            </ImgWrap>
 
             <DescWrap>
                 <ProductShortCard.NameShort />
@@ -20,10 +23,17 @@ export function ShoppingCartItem(
                 <ProductShortCard.Price />
                 <ProductShortCard.Qty />
             </QtyWrap>
+
             <ProductShortCard.Cost />
+
         </ProductShortCard>
     );
 };
+
+const ImgWrap = styled.div`
+    flex: 1 0 auto;
+    width: 80px;
+`;
 
 const DescWrap = styled.div`
     flex: 1 1 50%;

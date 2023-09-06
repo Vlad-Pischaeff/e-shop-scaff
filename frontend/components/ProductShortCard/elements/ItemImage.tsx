@@ -3,15 +3,18 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import { useProductContext } from '../useProductContext';
 
-export function ItemImage() {
+export function ItemImage(
+    { width, height }:
+    { width: number, height: number }
+) {
     const item = useProductContext();
 
     return (
         <StyledImage>
             <Image
                 src={item.product.image}
-                width={128}
-                height={100}
+                width={width}
+                height={height}
                 alt={item.product.shortname}
             />
         </StyledImage>
@@ -20,7 +23,6 @@ export function ItemImage() {
 
 const StyledImage = styled.picture`
     display: block;
-    width: 80px;
     & > img {
         object-fit: contain;
         width: 100%;
