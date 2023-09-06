@@ -1,47 +1,27 @@
-import Image from 'next/image';
+import { ProductShortCard } from '@/components/ProductShortCard';
 import { ShoppingCartQty } from './ShoppingCartQty';
 import { CartItem } from '@/data/types';
 import s from './cart.module.sass';
 
-type Props = {
-    item: CartItem
-}
-
-export function ShoppingCartItem({ item }: Props) {
+export function ShoppingCartItem(
+    { item }:
+    { item: CartItem }
+) {
 
     return (
-        <div className={s.itemContainer}>
-            <picture className={s.itemImage}>
-                <Image
-                    src={item.product.image}
-                    width={128}
-                    height={100}
-                    alt={item.product.shortname}
-                />
-            </picture>
+        <ProductShortCard product={item.product}>
+            <ProductShortCard.ItemImage image={item.product.image} alt={item.product.shortname} />
 
             <div className={s.itemName}>
-                <p className={s.itemNameShort}>
-                    {item.product.shortname}
-                </p>
-                <p className={s.itemNameFull}>
-                    {item.product.fullname}
-                </p>
+                <ProductShortCard.NameShort name={item.product.shortname} />
+                <ProductShortCard.NameFull name={item.product.fullname} />
             </div>
 
             <div className={s.itemQtyWrap}>
-                <p className={s.itemCost}>
-                    {item.product.price.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}
-                </p>
-
+                <ProductShortCard.Price price={item.product.price} />
                 <ShoppingCartQty item={item} />
             </div>
-            <div className={s.itemSumm}>
-                {
-                    (item.qty * item.product.price)
-                        .toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })
-                }
-            </div>
-        </div>
+            <ProductShortCard.Cost cost={(item.qty * item.product.price)} />
+        </ProductShortCard>
     );
 };

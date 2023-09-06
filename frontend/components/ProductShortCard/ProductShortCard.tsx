@@ -2,36 +2,37 @@ import React from 'react';
 import styled from 'styled-components';
 import { Product } from '@/data/types';
 import { ProductProvider } from './useProductContext';
+import { ItemImage, Cost, Price, NameFull, NameShort } from './elements';
 
 function ProductShortCard(
-    { children, slug, tag, product }:
+    { children, product }:
     {
         children: React.ReactNode,
-        slug: string,
-        tag: string,
         product: Product
     }
 ) {
     return (
-        <ProductProvider value={{ slug, tag, product }}>
-            <StyledCounter>
+        <ProductProvider value={{ product }}>
+            <StyledCard>
                 {children}
-            </StyledCounter>
+            </StyledCard>
         </ProductProvider>
     )
 }
 
-const StyledCounter = styled.div`
-    display: inline-flex;
-    border: 1px solid #17a2b8;
-    line-height: 1.5;
-    border-radius: 0.25rem;
-    overflow: hidden;
+const StyledCard = styled.div`
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 12px 16px;
+    border-radius: 16px;
+    background: #ffffffb4;
 `;
 
-Counter.Count = Count;
-Counter.Label = Label;
-Counter.Increment = Increment;
-Counter.Decrement = Decrement;
+ProductShortCard.ItemImage = ItemImage;
+ProductShortCard.Cost = Cost;
+ProductShortCard.Price = Price;
+ProductShortCard.NameFull = NameFull;
+ProductShortCard.NameShort = NameShort;
 
 export { ProductShortCard };
