@@ -1,14 +1,18 @@
 import styled from 'styled-components';
+import { AppDispatch } from '@/store/store';
 import { ProductShortCard } from '@/components/templates/ProductShortCard';
 import { CartItem } from '@/data/types';
 
 export function ShoppingCartItem(
-    { item }:
-    { item: CartItem }
+    { item, action }:
+    {
+        item: CartItem,
+        action: AppDispatch
+    }
 ) {
 
     return (
-        <ProductShortCard item={item}>
+        <ProductShortCard item={item} action={action}>
 
             <ImgWrap>
                 <ProductShortCard.ItemImage width={180} height={120} />

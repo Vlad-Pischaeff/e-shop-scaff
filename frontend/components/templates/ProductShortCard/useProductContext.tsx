@@ -1,19 +1,24 @@
 import React from "react";
 import { CartItem } from '@/data/types';
+import { AppDispatch } from '@/store/store';
 
 const ProductContext = React.createContext<CartItem | undefined>(undefined);
+const ProductActionContext = React.createContext<AppDispatch | undefined>(undefined);
 
 function ProductProvider(
-    { children, value }:
+    { children, value, action }:
     {
         children: React.ReactNode,
-        value: CartItem
+        value: CartItem,
+        action: AppDispatch
     }
 ) {
     return (
-        <ProductContext.Provider value={value}>
-            {children}
-        </ProductContext.Provider>
+        <ProductActionContext.Provider value={action}>
+            <ProductContext.Provider value={value}>
+                {children}
+            </ProductContext.Provider>
+        </ProductActionContext.Provider>
     );
 }
 
@@ -26,4 +31,13 @@ function useProductContext() {
     return context;
 }
 
-export { ProductProvider, useProductContext };
+function useProductActionContext() {
+    const context = React.useContext(ProductActionContext);
+
+    if (context === undefined) {
+        throw new Error("useProductContext must be used within a ProductProvider");
+    }
+    return context;
+}
+
+export { ProductProvider, useProductContext, useProductActionContext };

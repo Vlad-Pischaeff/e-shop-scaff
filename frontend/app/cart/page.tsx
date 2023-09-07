@@ -1,27 +1,27 @@
 "use client";
 
 import styled from 'styled-components';
-import { TotalPriceSelector, selectCartItems, totalCartItemsSelector } from '@/store/slices/selectors';
-import { useAppSelector } from '@/store/store';
-import { ShoppingCartItem } from '@/components/cart/ShoppingCartItem';
-import { CartSummary } from '@/components/templates/CartSummary';
-import s from './page.module.sass';
+import { selectCartItems, totalCartItemsSelector } from '@/store/slices/selectors';
+import { useAppSelector, useAppDispatch } from '@/store/store';
+import { ShoppingCartItem, ShoppingCartSumm } from '@/components/cart';
 
 export default function CartPage() {
+    const dispatch = useAppDispatch();
     const cartItems = useAppSelector(selectCartItems);
     const totalCartPcs = useAppSelector(totalCartItemsSelector);
-    const totalPrice = useAppSelector(TotalPriceSelector);
     const totalCartItems = Object.keys(cartItems).length;
 
     const handlerSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('payment...', totalPrice);
+        console.log('payment...', cartItems);
     }
+
+    console.log('CartPage..', cartItems);
 
     return (
         <main>
-            <section className={s.cartContainer}>
-                <section className={s.items}>
+            <StyledContainer>
+                <StyledItemsWrap>
                     <StyledCartTitle>
                         <span>Корзина</span>
                         {
@@ -34,29 +34,35 @@ export default function CartPage() {
                     <StyledItemsContainer>
                         {Object.values(cartItems).map((item) => (
                             <div key={item.product.id}>
-                                <ShoppingCartItem item={item} />
+                                <ShoppingCartItem item={item} action={dispatch} />
                             </div>
                         ))}
                     </StyledItemsContainer>
-                </section>
+                </StyledItemsWrap>
 
-                <CartSummary onSubmit={handlerSubmit}>
-                    <CartSummary.TotalValue title='Total:'>
-                        {totalPrice.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}
-                    </CartSummary.TotalValue>
-                    <CartSummary.TotalValue title='Items:'>
-                        {totalCartItems}
-                    </CartSummary.TotalValue>
-                    <CartSummary.TotalValue title='Pcs:'>
-                        {totalCartPcs}
-                    </CartSummary.TotalValue>
-                    <CartSummary.PaymentButton active={totalPrice !== 0} />
-                </CartSummary>
-            </section>
+                <ShoppingCartSumm onSubmit={handlerSubmit} />
+
+            </StyledContainer>
         </main>
     );
 };
 
+const StyledContainer = styled.section`
+    flex: 1 1 auto;
+    padding: 16px;
+    display: flex;
+    gap: 8px;
+
+    @media (min-width: 1200px) {
+        width: 1180px;
+        margin: auto;
+        box-shadow: 0px 1px 49px 0px rgba(51, 100, 139, 0.2);
+    }
+`;
+
+const StyledItemsWrap = styled.div`
+    flex: 1 1 auto;
+`;
 
 const StyledCartTitle = styled.p`
     font-size: 1.8rem;

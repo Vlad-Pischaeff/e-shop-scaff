@@ -1,18 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import { CartItem } from '@/data/types';
+import { AppDispatch } from '@/store/store';
 import { ProductProvider } from './useProductContext';
 import { ItemImage, Cost, Price, NameFull, NameShort, Qty } from './elements';
 
 function ProductShortCard(
-    { children, item }:
+    { children, item, action }:
     {
         children: React.ReactNode,
-        item: CartItem
+        item: CartItem,
+        action: AppDispatch
     }
 ) {
+
     return (
-        <ProductProvider value={item}>
+        <ProductProvider value={item} action={action}>
             <StyledCard>
                 {children}
             </StyledCard>

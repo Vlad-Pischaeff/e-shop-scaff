@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 import { decrement, increment, removeItem } from '@/store/slices/cartSlice';
-import { useAppDispatch } from '@/store/store';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import { useProductContext } from '../useProductContext';
+import { useProductContext, useProductActionContext } from '../useProductContext';
 import s from './styles.module.sass';
 
 export function Qty() {
     const item = useProductContext();
-    const dispatch = useAppDispatch();
+    const dispatch = useProductActionContext();
 
     return (
         <div>
