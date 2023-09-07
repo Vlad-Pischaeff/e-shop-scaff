@@ -16,14 +16,14 @@ function ProductShortCard(
 
     return (
         <ProductProvider value={item} action={action}>
-            <StyledCard>
+            <SDiv>
                 {children}
-            </StyledCard>
+            </SDiv>
         </ProductProvider>
     )
 }
 
-const StyledCard = styled.div`
+const SDiv = styled.div`
     display: flex;
     align-items: flex-start;
     gap: 1rem;

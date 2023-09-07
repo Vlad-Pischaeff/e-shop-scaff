@@ -6,12 +6,12 @@ export function NameFull() {
     const item = useProductContext();
 
     return (
-        <StyledName>
+        <SName>
             {item.product.fullname}
-        </StyledName>
+        </SName>
     )
 }
 
-const StyledName = styled.p`
+const SName = styled.p`
     color: gray;
 `;

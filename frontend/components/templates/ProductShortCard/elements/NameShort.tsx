@@ -6,13 +6,13 @@ export function NameShort() {
     const item = useProductContext();
 
     return (
-        <StyledName>
+        <SName>
             {item.product.shortname}
-        </StyledName>
+        </SName>
     )
 }
 
-const StyledName = styled.p`
+const SName = styled.p`
     color: #333;
     font-size: 1.5rem;
 `;

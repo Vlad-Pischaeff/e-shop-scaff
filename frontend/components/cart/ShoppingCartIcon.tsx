@@ -11,23 +11,23 @@ export function ShoppingCartIcon() {
     const totalItems = useAppSelector(totalCartItemsSelector);
 
     return (
-        <StyledDiv $filled={!!totalItems}>
-            <StyledLink href={'/cart'}>
+        <SDiv $filled={!!totalItems}>
+            <SLink href={'/cart'}>
                 {!!totalItems
                     ? <LocalGroceryStoreIcon />
                     : <ShoppingCartOutlinedIcon />
                 }
-            </StyledLink>
+            </SLink>
             { !!totalItems &&
-                <StyledValue>
+                <SValue>
                     {totalItems}
-                </StyledValue>
+                </SValue>
             }
-        </StyledDiv>
+        </SDiv>
     )
 }
 
-const StyledDiv = styled.div<{ $filled?: boolean; }>`
+const SDiv = styled.div<{ $filled?: boolean; }>`
     position: relative;
     display: grid;
     place-items: center;
@@ -47,7 +47,7 @@ const StyledDiv = styled.div<{ $filled?: boolean; }>`
     }
 `;
 
-const StyledValue = styled.div`
+const SValue = styled.div`
     position: absolute;
     display: flex;
     justify-content: center;
@@ -61,7 +61,7 @@ const StyledValue = styled.div`
     border-radius: 50%;
 `;
 
-const StyledLink = styled(Link)`
+const SLink = styled(Link)`
     display: grid;
     place-items: center;
 `;

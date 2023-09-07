@@ -6,16 +6,16 @@ export function Cost() {
     const item = useProductContext();
 
     return (
-        <StyledCost>
+        <SDiv>
             { !!item
                 ? (item.qty * item.product.price).toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })
                 : 0
             }
-        </StyledCost>
+        </SDiv>
     )
 }
 
-const StyledCost = styled.div`
+const SDiv = styled.div`
     display: flex;
     flex-flow: column;
     justify-content: center;

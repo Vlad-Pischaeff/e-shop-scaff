@@ -12,7 +12,7 @@ export function Qty() {
 
     return (
         <div>
-            <QtyWrap>
+            <SDiv>
                 {item.qty === 1
                     ? (<RemoveCircleOutlineIcon className={s.iconDisbl} />)
                     : (<RemoveCircleOutlineIcon
@@ -23,7 +23,7 @@ export function Qty() {
                 <AddCircleOutlineIcon
                     className={s.icon}
                     onClick={() => dispatch(increment(item.product))} />
-            </QtyWrap>
+            </SDiv>
             <DeleteOutlineIcon
                 className={s.icon}
                 onClick={() => dispatch(removeItem(item.product.id))} />
@@ -31,7 +31,7 @@ export function Qty() {
     );
 };
 
-const QtyWrap = styled.div`
+const SDiv = styled.div`
     display: flex;
     gap: 4px;
     padding: 4px 0;

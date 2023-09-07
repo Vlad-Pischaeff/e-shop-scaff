@@ -10,18 +10,18 @@ export function ItemImage(
     const item = useProductContext();
 
     return (
-        <StyledImage>
+        <SImage>
             <Image
                 src={item.product.image}
                 width={width}
                 height={height}
                 alt={item.product.shortname}
             />
-        </StyledImage>
+        </SImage>
     )
 }
 
-const StyledImage = styled.picture`
+const SImage = styled.picture`
     display: block;
     & > img {
         object-fit: contain;

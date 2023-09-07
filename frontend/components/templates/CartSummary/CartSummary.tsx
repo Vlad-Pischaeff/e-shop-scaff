@@ -10,15 +10,15 @@ function CartSummary(
     }
 ) {
     return (
-        <StyledForm onSubmit={onSubmit}>
-            <StyledDiv>
+        <SForm onSubmit={onSubmit}>
+            <SDiv>
                 {children}
-            </StyledDiv>
-        </StyledForm>
+            </SDiv>
+        </SForm>
     )
 }
 
-const StyledDiv = styled.div`
+const SDiv = styled.div`
     background: darkgray;
     border-radius: 16px;
     padding: 8px;
@@ -27,7 +27,7 @@ const StyledDiv = styled.div`
     min-height: 8rem;
 `;
 
-const StyledForm = styled.form`
+const SForm = styled.form`
     flex: 0 0 12rem;
 `;
 

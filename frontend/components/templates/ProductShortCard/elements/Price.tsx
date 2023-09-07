@@ -6,13 +6,13 @@ export function Price() {
     const item = useProductContext();
 
     return (
-        <StyledPrice>
+        <SPrice>
             { item.product.price.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' }) }
-        </StyledPrice>
+        </SPrice>
     )
 }
 
-const StyledPrice = styled.p`
+const SPrice = styled.p`
     font-size: 1.2rem;
     color: #888;
 `;

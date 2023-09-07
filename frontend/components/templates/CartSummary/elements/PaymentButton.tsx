@@ -6,13 +6,13 @@ export function PaymentButton(
     { active: boolean }
 ) {
     return (
-        <StyledButton $active={active} disabled={!active} type="submit">
+        <SButton $active={active} disabled={!active} type="submit">
             Payment
-        </StyledButton>
+        </SButton>
     )
 }
 
-const StyledButton = styled.button<{ $active?: boolean; }>`
+const SButton = styled.button<{ $active?: boolean; }>`
     padding: 8px 16px;
     border-radius: 8px;
     font-size: 1.5rem;

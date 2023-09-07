@@ -20,34 +20,34 @@ export default function CartPage() {
 
     return (
         <main>
-            <StyledContainer>
-                <StyledItemsWrap>
-                    <StyledCartTitle>
+            <SContainer>
+                <SItemsContainer>
+                    <SCartTitle>
                         <span>Корзина</span>
                         {
                             totalCartPcs === 0
                                 ? ' пустая'
                                 : ' ' + totalCartItems + ' товаров'
                         }
-                    </StyledCartTitle>
+                    </SCartTitle>
 
-                    <StyledItemsContainer>
+                    <SCartItems>
                         {Object.values(cartItems).map((item) => (
                             <div key={item.product.id}>
                                 <ShoppingCartItem item={item} action={dispatch} />
                             </div>
                         ))}
-                    </StyledItemsContainer>
-                </StyledItemsWrap>
+                    </SCartItems>
+                </SItemsContainer>
 
                 <ShoppingCartSumm onSubmit={handlerSubmit} />
 
-            </StyledContainer>
+            </SContainer>
         </main>
     );
 };
 
-const StyledContainer = styled.section`
+const SContainer = styled.section`
     flex: 1 1 auto;
     padding: 16px;
     display: flex;
@@ -60,17 +60,17 @@ const StyledContainer = styled.section`
     }
 `;
 
-const StyledItemsWrap = styled.div`
+const SItemsContainer = styled.div`
     flex: 1 1 auto;
 `;
 
-const StyledCartTitle = styled.p`
+const SCartTitle = styled.p`
     font-size: 1.8rem;
     color: gray;
     padding: 1rem 0;
 `;
 
-const StyledItemsContainer = styled.div`
+const SCartItems = styled.div`
     display: flex;
     flex-flow: column;
     gap: 4px;
