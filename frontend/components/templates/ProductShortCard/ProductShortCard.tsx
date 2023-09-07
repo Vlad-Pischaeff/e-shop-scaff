@@ -12,7 +12,7 @@ function ProductShortCard(
     }
 ) {
     return (
-        <ProductProvider value={ item }>
+        <ProductProvider value={item}>
             <StyledCard>
                 {children}
             </StyledCard>
