@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export function PaymentButton(
+export const PaymentButton = React.memo(function (
     { active }:
     { active: boolean }
 ) {
@@ -10,7 +10,7 @@ export function PaymentButton(
             Payment
         </SButton>
     )
-}
+})
 
 const SButton = styled.button<{ $active?: boolean; }>`
     padding: 8px 16px;
