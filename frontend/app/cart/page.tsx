@@ -16,8 +16,6 @@ export default function CartPage() {
         console.log('payment...', cartItems);
     }
 
-    console.log('CartPage..', cartItems);
-
     return (
         <main>
             <SContainer>

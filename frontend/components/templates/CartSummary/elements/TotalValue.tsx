@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export function TotalValue(
+export const TotalValue = React.memo(function (
     { children, title }:
     {
         children: React.ReactNode,
@@ -15,7 +15,7 @@ export function TotalValue(
             <SAmount>{children}</SAmount>
         </STotal>
     )
-}
+})
 
 const STotal = styled.div`
     display: flex;
