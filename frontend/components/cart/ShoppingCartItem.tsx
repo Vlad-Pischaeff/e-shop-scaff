@@ -1,9 +1,10 @@
+import React from 'react';
 import styled from 'styled-components';
 import { AppDispatch } from '@/store/store';
 import { ProductShortCard } from '@/components/templates/ProductShortCard';
 import { CartItem } from '@/data/types';
 
-export function ShoppingCartItem(
+export const ShoppingCartItem = React.memo(function (
     { item, action }:
     {
         item: CartItem,
@@ -15,7 +16,10 @@ export function ShoppingCartItem(
         <ProductShortCard item={item} action={action}>
 
             <SImgWrap>
-                <ProductShortCard.ItemImage width={180} height={120} />
+                <ProductShortCard.ItemImage
+                    width={180}
+                    height={120}
+                />
             </SImgWrap>
 
             <SDescWrap>
@@ -32,7 +36,11 @@ export function ShoppingCartItem(
 
         </ProductShortCard>
     );
-};
+}, (prev, next) => {
+    return (prev.item.qty === next.item.qty)
+        ? true
+        : false;
+})
 
 const SImgWrap = styled.div`
     flex: 1 0 auto;
