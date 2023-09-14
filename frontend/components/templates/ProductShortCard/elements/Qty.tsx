@@ -40,16 +40,16 @@ const DeleteItem = React.memo(function({onClick}: {onClick: () => void}) {
     return (
         <DeleteOutlineIcon onClick={onClick} className={s.icon} />
     )
-}, (prev, next) => true);
+}, () => true);
 
 const IncreaseItem = React.memo(function({onClick}: {onClick: () => void}) {
     return (
         <AddCircleOutlineIcon onClick={onClick} className={s.icon} />
     )
-}, (prev, next) => true);
+}, () => true);
 
 const DecreaseItem = React.memo(function({onClick}: {onClick: () => void}) {
     return (
         <RemoveCircleOutlineIcon onClick={onClick} className={s.icon} />
     )
-}, (prev, next) => true);
+}, () => true);

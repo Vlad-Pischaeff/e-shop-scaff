@@ -34,7 +34,7 @@ export const ShoppingCartItem = React.memo(function (
 
             <SQtyWrap>
                 <ProductShortCard.Price>
-                    {item.product.price}
+                    {item.product.price.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}
                 </ProductShortCard.Price>
 
                 <ProductShortCard.Qty />
