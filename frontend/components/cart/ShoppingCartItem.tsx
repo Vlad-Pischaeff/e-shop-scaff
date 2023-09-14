@@ -23,16 +23,29 @@ export const ShoppingCartItem = React.memo(function (
             </SImgWrap>
 
             <SDescWrap>
-                <ProductShortCard.NameShort />
-                <ProductShortCard.NameFull />
+                <ProductShortCard.NameShort>
+                    {item.product.shortname}
+                </ProductShortCard.NameShort>
+
+                <ProductShortCard.NameFull>
+                    {item.product.fullname}
+                </ProductShortCard.NameFull>
             </SDescWrap>
 
             <SQtyWrap>
-                <ProductShortCard.Price />
+                <ProductShortCard.Price>
+                    {item.product.price}
+                </ProductShortCard.Price>
+
                 <ProductShortCard.Qty />
             </SQtyWrap>
 
-            <ProductShortCard.Cost />
+            <ProductShortCard.Cost>
+                {
+                    (item.qty * item.product.price)
+                        .toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })
+                }
+            </ProductShortCard.Cost>
 
         </ProductShortCard>
     );

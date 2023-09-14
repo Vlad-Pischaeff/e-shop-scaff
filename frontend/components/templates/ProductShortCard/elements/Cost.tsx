@@ -1,16 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useProductContext } from '../useProductContext';
 
-export function Cost() {
-    const item = useProductContext();
-
+export function Cost({children}: {children: React.ReactNode}) {
     return (
         <SDiv>
-            { !!item
-                ? (item.qty * item.product.price).toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })
-                : 0
-            }
+            {children}
         </SDiv>
     )
 }

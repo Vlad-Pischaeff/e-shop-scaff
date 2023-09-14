@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { CartItem } from '@/data/types';
 import { AppDispatch } from '@/store/store';
 import { ProductProvider } from './useProductContext';
-import { ItemImage, Cost, Price, NameFull, NameShort, Qty } from './elements';
+import { ItemImage, Cost, Qty } from './elements';
+import { TextNormal, TextBold, TextPrice } from '../commmon';
 
 function ProductShortCard(
     { children, item, action }:
@@ -34,9 +35,9 @@ const SDiv = styled.div`
 
 ProductShortCard.Qty = Qty;
 ProductShortCard.Cost = Cost;
-ProductShortCard.Price = Price;
-ProductShortCard.NameFull = NameFull;
-ProductShortCard.NameShort = NameShort;
+ProductShortCard.Price = TextPrice;
+ProductShortCard.NameFull = TextNormal;
+ProductShortCard.NameShort = TextBold;
 ProductShortCard.ItemImage = ItemImage;
 
 export { ProductShortCard };
