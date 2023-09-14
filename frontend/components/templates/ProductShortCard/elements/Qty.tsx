@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { decrement, increment, removeItem } from '@/store/slices/cartSlice';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
@@ -15,18 +16,12 @@ export function Qty() {
             <SDiv>
                 {item.qty === 1
                     ? (<RemoveCircleOutlineIcon className={s.iconDisbl} />)
-                    : (<RemoveCircleOutlineIcon
-                            className={s.icon}
-                            onClick={() => dispatch(decrement(item.product))} />)
+                    : (<DecreaseItem onClick={() => dispatch(decrement(item.product))} />)
                 }
                 <p>{item.qty}</p>
-                <AddCircleOutlineIcon
-                    className={s.icon}
-                    onClick={() => dispatch(increment(item.product))} />
+                <IncreaseItem onClick={() => dispatch(increment(item.product))} />
             </SDiv>
-            <DeleteOutlineIcon
-                className={s.icon}
-                onClick={() => dispatch(removeItem(item.product.id))} />
+            <DeleteItem onClick={() => dispatch(removeItem(item.product.id))} />
         </div>
     );
 };
@@ -40,3 +35,21 @@ const SDiv = styled.div`
     border-radius: 16px;
     margin: 4px 0;
 `;
+
+const DeleteItem = React.memo(function({onClick}: {onClick: () => void}) {
+    return (
+        <DeleteOutlineIcon onClick={onClick} className={s.icon} />
+    )
+}, (prev, next) => true);
+
+const IncreaseItem = React.memo(function({onClick}: {onClick: () => void}) {
+    return (
+        <AddCircleOutlineIcon onClick={onClick} className={s.icon} />
+    )
+}, (prev, next) => true);
+
+const DecreaseItem = React.memo(function({onClick}: {onClick: () => void}) {
+    return (
+        <RemoveCircleOutlineIcon onClick={onClick} className={s.icon} />
+    )
+}, (prev, next) => true);
