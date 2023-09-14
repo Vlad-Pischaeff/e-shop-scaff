@@ -1,26 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CartItem } from '@/data/types';
-import { AppDispatch } from '@/store/store';
-import { ProductProvider } from './useProductContext';
 import { ItemImage, Cost, Qty } from './elements';
 import { TextNormal, TextBold, TextPrice } from '../common';
 
-function ProductShortCard(
-    { children, item, action }:
-    {
-        children: React.ReactNode,
-        item: CartItem,
-        action: AppDispatch
-    }
-) {
-
+function ProductShortCard({children}: {children: React.ReactNode}) {
     return (
-        <ProductProvider value={item} action={action}>
-            <SDiv>
-                {children}
-            </SDiv>
-        </ProductProvider>
+        <SDiv>
+            {children}
+        </SDiv>
     )
 }
 

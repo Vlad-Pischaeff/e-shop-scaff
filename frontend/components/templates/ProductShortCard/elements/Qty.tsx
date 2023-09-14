@@ -4,22 +4,27 @@ import { decrement, increment, removeItem } from '@/store/slices/cartSlice';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import { useProductContext, useProductActionContext } from '../useProductContext';
+import { CartItem } from '@/data/types';
+import { AppDispatch } from '@/store/store';
 import s from './styles.module.sass';
 
-export function Qty() {
-    const item = useProductContext();
-    const dispatch = useProductActionContext();
+export function Qty(
+    { item, dispatch }:
+    {
+        item: CartItem,
+        dispatch: AppDispatch
+    }
+) {
 
     return (
         <div>
             <SDiv>
                 {item.qty === 1
-                    ? (<RemoveCircleOutlineIcon className={s.iconDisbl} />)
-                    : (<DecreaseItem onClick={() => dispatch(decrement(item.product))} />)
+                    ? (<DecreaseQtyDisabled />)
+                    : (<DecreaseQty onClick={() => dispatch(decrement(item.product))} />)
                 }
                 <p>{item.qty}</p>
-                <IncreaseItem onClick={() => dispatch(increment(item.product))} />
+                <IncreaseQty onClick={() => dispatch(increment(item.product))} />
             </SDiv>
             <DeleteItem onClick={() => dispatch(removeItem(item.product.id))} />
         </div>
@@ -36,19 +41,23 @@ const SDiv = styled.div`
     margin: 4px 0;
 `;
 
+const DecreaseQtyDisabled = styled(RemoveCircleOutlineIcon)`
+    color: #ccc;
+`;
+
 const DeleteItem = React.memo(function({onClick}: {onClick: () => void}) {
     return (
         <DeleteOutlineIcon onClick={onClick} className={s.icon} />
     )
 }, () => true);
 
-const IncreaseItem = React.memo(function({onClick}: {onClick: () => void}) {
+const IncreaseQty = React.memo(function({onClick}: {onClick: () => void}) {
     return (
         <AddCircleOutlineIcon onClick={onClick} className={s.icon} />
     )
 }, () => true);
 
-const DecreaseItem = React.memo(function({onClick}: {onClick: () => void}) {
+const DecreaseQty = React.memo(function({onClick}: {onClick: () => void}) {
     return (
         <RemoveCircleOutlineIcon onClick={onClick} className={s.icon} />
     )

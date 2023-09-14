@@ -1,3 +1,4 @@
+/** not used */
 import React from "react";
 import { CartItem } from '@/data/types';
 import { AppDispatch } from '@/store/store';

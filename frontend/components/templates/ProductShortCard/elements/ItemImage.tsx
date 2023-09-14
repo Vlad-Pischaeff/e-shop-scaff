@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import { useProductContext } from '../useProductContext';
+import { CartItem } from '@/data/types';
 
 export function ItemImage(
-    { width, height }:
-    { width: number, height: number }
+    { width, height, item }:
+    { width: number, height: number, item: CartItem }
 ) {
-    const item = useProductContext();
 
     return (
         <SImage>

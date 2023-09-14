@@ -13,12 +13,13 @@ export const ShoppingCartItem = React.memo(function (
 ) {
 
     return (
-        <ProductShortCard item={item} action={action}>
+        <ProductShortCard>
 
             <SImgWrap>
                 <ProductShortCard.ItemImage
                     width={180}
                     height={120}
+                    item={item}
                 />
             </SImgWrap>
 
@@ -37,7 +38,7 @@ export const ShoppingCartItem = React.memo(function (
                     {item.product.price.toLocaleString('ru-RU', { style: 'currency', currency: 'RUB' })}
                 </ProductShortCard.Price>
 
-                <ProductShortCard.Qty />
+                <ProductShortCard.Qty item={item} dispatch={action}/>
             </SQtyWrap>
 
             <ProductShortCard.Cost>
