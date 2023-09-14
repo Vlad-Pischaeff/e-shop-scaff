@@ -35,7 +35,7 @@ const SDiv = styled.div`
     display: flex;
     gap: 4px;
     padding: 4px 0;
-    background: #96e5f229;
+    background: #96e5f247;
     justify-content: space-around;
     border-radius: 16px;
     margin: 4px 0;
